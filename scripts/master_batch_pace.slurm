@@ -27,8 +27,8 @@ fi
 export PYTHONUNBUFFERED=1
 
 # Configuration via environment variables
-BOT_FIRST="${BOT_FIRST:-}"
-BOT_SECOND="${BOT_SECOND:-}"
+BOT_FIRST="${yolanda_prime_v4_7:-}"
+BOT_SECOND="${yolanda_prime_v6:-}"
 GAMES="${GAMES:-100}"
 PROFILE="${PROFILE:-strict}"
 WORKERS="${WORKERS:-${SLURM_CPUS_PER_TASK:-24}}"
