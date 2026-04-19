@@ -42,6 +42,9 @@ fi
 mkdir -p logs
 
 echo "Starting Master Batch Matchup..."
+echo "Project: $PROJECT_DIR"
+echo "Python: $("$PYTHON_BIN" -c 'import sys; print(sys.executable)')"
+echo "NumPy: $("$PYTHON_BIN" -c 'import numpy; print(numpy.__version__)' 2>/dev/null || echo 'Not Found')"
 echo "Bot 1: $BOT_FIRST"
 echo "Bot 2: $BOT_SECOND"
 echo "Games: $GAMES"

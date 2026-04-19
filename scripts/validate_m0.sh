@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)"
 LOG_DIR="${ROOT_DIR}/docs/logs/m0_validation"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 VENV_DIR="${ROOT_DIR}/.venv"
@@ -114,16 +114,16 @@ run_step "venv_create" "${PYTHON_BIN}" -m venv "${VENV_DIR}"
 run_step "pip_upgrade" "${VENV_DIR}/bin/python" -m pip install --upgrade pip
 
 if [[ ${SKIP_INSTALL} -eq 0 ]]; then
-  run_step "pip_install" "${VENV_DIR}/bin/python" -m pip install -r requirements.txt
+  run_step "pip_install" "${VENV_DIR}/bin/python" -m pip install -r "${ROOT_DIR}/requirements.txt"
 else
   log "Skipping pip install (--skip-install set)"
 fi
 
-run_step "quality_guard" "${VENV_DIR}/bin/python" workflows/quality_guard.py
+run_step "quality_guard" "${VENV_DIR}/bin/python" "${ROOT_DIR}/workflows/quality_guard.py"
 
 run_step "runtime_smoke" env \
-  PYTHONPATH="engine:3600-agents" \
-  "${VENV_DIR}/bin/python" engine/run_local_agents.py Yolanda Yolanda
+  PYTHONPATH="${ROOT_DIR}/engine:${ROOT_DIR}/3600-agents" \
+  "${VENV_DIR}/bin/python" "${ROOT_DIR}/engine/run_local_agents.py" Yolanda Yolanda
 
 if [[ ${RUN_RESTRICTED} -eq 1 ]]; then
   run_step "restricted_validate" env \
