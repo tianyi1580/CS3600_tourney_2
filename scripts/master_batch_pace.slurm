@@ -16,6 +16,9 @@
 
 set -euo pipefail
 
+# Ensure we have a compatible Python version (3.10+) for Modern NumPy/Numba
+module load python/3.10 2>/dev/null || echo "Note: python/3.10 module not found, relying on system/venv"
+
 PROJECT_DIR="${PROJECT_DIR:-${SLURM_SUBMIT_DIR:-$PWD}}"
 cd "$PROJECT_DIR"
 
