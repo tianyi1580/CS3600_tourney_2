@@ -1,0 +1,132 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-16-2026 23:33:35
+Job ID:    6580882
+User ID:   tma94
+Account:   paceship-terratrends
+Job name:  yp2-hyperopt
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+RUN_DIR=data/hyperopt/yolanda_prime_v2/pace_run_new_20260416_233316 GENERATIONS=30 POPULATION=24 SIGMA=0.25 WORKERS=16 RUN_PHASE2=0
+Selected optimizer: cma
+Candidate agent: yolanda_prime_v2  (env: YP2_WEIGHTS_JSON)
+Generation evaluation config: mode=flattened dynamic_budget=True budget_schedule=0-10:200,11-20:260,21-9999:330 mercy_enabled=True
+Running hyperopt preflight...
+Preflight passed.
+/storage/home/hcoda1/7/tma94/CS3600_tourney/.venv/lib/python3.11/site-packages/cma/s.py:16: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[23:34:18] Starting Generation 0...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 0 Summary: Best=1.614 Mean=-0.636 Worst=-3.096
+[00:15:59] Starting Generation 1...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 1 Summary: Best=2.455 Mean=0.003 Worst=-1.989
+[00:58:07] Starting Generation 2...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 2 Summary: Best=2.553 Mean=0.281 Worst=-3.469
+[01:40:20] Starting Generation 3...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 3 Summary: Best=3.197 Mean=0.654 Worst=-1.869
+[02:22:02] Starting Generation 4...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 4 Summary: Best=2.089 Mean=0.697 Worst=-1.018
+  Performing strict mode validation...
+  [STRICT] PASSED
+[03:08:47] Starting Generation 5...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 5 Summary: Best=3.229 Mean=1.199 Worst=-1.289
+[03:50:46] Starting Generation 6...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 6 Summary: Best=4.015 Mean=1.419 Worst=-1.672
+[04:32:37] Starting Generation 7...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 7 Summary: Best=3.817 Mean=1.275 Worst=-0.992
+[05:14:23] Starting Generation 8...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 8 Summary: Best=3.224 Mean=1.714 Worst=-0.634
+[05:56:14] Starting Generation 9...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 9 Summary: Best=3.514 Mean=1.567 Worst=-1.829
+  Performing strict mode validation...
+  [STRICT] PASSED
+[06:42:45] Starting Generation 10...
+  Eval telemetry: mode=flattened planned/candidate=200 evaluated_total=4800 pruned=0
+  Gen 10 Summary: Best=3.073 Mean=1.655 Worst=0.208
+[07:24:04] Starting Generation 11...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 11 Summary: Best=4.280 Mean=1.850 Worst=0.338
+[08:17:42] Starting Generation 12...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 12 Summary: Best=3.718 Mean=2.147 Worst=0.526
+[09:11:29] Starting Generation 13...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 13 Summary: Best=3.767 Mean=1.847 Worst=-0.321
+[10:05:21] Starting Generation 14...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 14 Summary: Best=4.550 Mean=2.387 Worst=0.283
+  Performing strict mode validation...
+  [STRICT] PASSED
+[11:04:56] Starting Generation 15...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 15 Summary: Best=4.041 Mean=2.253 Worst=-0.051
+[11:58:40] Starting Generation 16...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 16 Summary: Best=4.314 Mean=2.390 Worst=0.921
+[12:52:26] Starting Generation 17...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 17 Summary: Best=3.878 Mean=2.286 Worst=0.425
+[13:46:12] Starting Generation 18...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 18 Summary: Best=4.297 Mean=2.352 Worst=-0.006
+[14:40:08] Starting Generation 19...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 19 Summary: Best=4.388 Mean=2.368 Worst=0.561
+  Performing strict mode validation...
+  [STRICT] PASSED
+[15:39:21] Starting Generation 20...
+  Eval telemetry: mode=flattened planned/candidate=260 evaluated_total=6240 pruned=0
+  Gen 20 Summary: Best=4.333 Mean=2.642 Worst=0.096
+[16:33:23] Starting Generation 21...
+  Eval telemetry: mode=flattened planned/candidate=330 evaluated_total=7920 pruned=0
+  Gen 21 Summary: Best=4.474 Mean=2.380 Worst=0.595
+[17:41:29] Starting Generation 22...
+  Eval telemetry: mode=flattened planned/candidate=330 evaluated_total=7920 pruned=0
+  Gen 22 Summary: Best=3.498 Mean=2.529 Worst=1.217
+[18:49:35] Starting Generation 23...
+  Eval telemetry: mode=flattened planned/candidate=330 evaluated_total=7920 pruned=0
+  Gen 23 Summary: Best=3.875 Mean=2.735 Worst=0.645
+[19:58:35] Starting Generation 24...
+  Eval telemetry: mode=flattened planned/candidate=330 evaluated_total=7920 pruned=0
+  Gen 24 Summary: Best=4.457 Mean=3.102 Worst=1.841
+  Performing strict mode validation...
+  [STRICT] PASSED
+[21:11:27] Starting Generation 25...
+  Eval telemetry: mode=flattened planned/candidate=330 evaluated_total=7920 pruned=0
+  Gen 25 Summary: Best=4.561 Mean=2.678 Worst=1.477
+[22:19:28] Starting Generation 26...
+  Eval telemetry: mode=flattened planned/candidate=330 evaluated_total=7920 pruned=0
+  Gen 26 Summary: Best=4.613 Mean=2.845 Worst=0.116
+[23:27:42] Starting Generation 27...
+  Eval telemetry: mode=flattened planned/candidate=330 evaluated_total=7920 pruned=0
+  Gen 27 Summary: Best=4.221 Mean=2.511 Worst=0.592
+[00:36:47] Starting Generation 28...
+  Eval telemetry: mode=flattened planned/candidate=330 evaluated_total=7920 pruned=0
+  Gen 28 Summary: Best=5.475 Mean=3.032 Worst=1.482
+[01:45:12] Starting Generation 29...
+  Eval telemetry: mode=flattened planned/candidate=330 evaluated_total=7920 pruned=0
+  Gen 29 Summary: Best=4.303 Mean=2.917 Worst=1.731
+  Performing strict mode validation...
+  [STRICT] PASSED
+[2026-04-18T04:59:03.231] error: *** JOB 6580882 ON atl1-1-02-009-10-2 CANCELLED AT 2026-04-18T04:59:03 DUE to SIGNAL Terminated ***
+---------------------------------------
+Begin Slurm Epilog: Apr-18-2026 04:59:05
+Job ID:        6580882
+User ID:       tma94
+Account:       paceship-terratrends
+Job name:      yp2-hyperopt
+Resources:     cpu=16,mem=12G,node=1
+Rsrc Used:     cput=19-14:47:28,vmem=0,walltime=1-05:25:28,mem=1156276K,energy_used=0
+Partition:     cpu-small
+QOS:           inferno
+Nodes:         atl1-1-02-009-10-2
+---------------------------------------

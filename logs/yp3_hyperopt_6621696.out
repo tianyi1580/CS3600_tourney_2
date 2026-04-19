@@ -1,0 +1,37 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-18-2026 05:30:11
+Job ID:    6621696
+User ID:   tma94
+Account:   paceship-terratrends
+Job name:  yp3-hyperopt
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+Starting YP3 Stage 1: Core Evaluator Optimization...
+Selected optimizer: cma
+Candidate agent: yolanda_prime_v3  (env: YP3_WEIGHTS_JSON)
+Generation evaluation config: mode=flattened dynamic_budget=True budget_schedule=0-5:20,6-15:32,16-9999:48 mercy_enabled=True
+Running hyperopt preflight...
+Preflight passed.
+/storage/home/hcoda1/7/tma94/CS3600_tourney/.venv/lib/python3.11/site-packages/cma/s.py:16: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[05:52:24] Starting Generation 0...
+  Eval telemetry: mode=flattened planned/candidate=20 evaluated_total=480 pruned=0
+  Gen 0 Summary: Best=11.452 Mean=4.902 Worst=-0.494
+[07:39:51] Starting Generation 1...
+  Eval telemetry: mode=flattened planned/candidate=20 evaluated_total=480 pruned=0
+  Gen 1 Summary: Best=9.061 Mean=4.217 Worst=-1.864
+[09:26:38] Starting Generation 2...
+[2026-04-18T11:01:46.088] error: *** JOB 6621696 ON atl1-1-02-017-34-2 CANCELLED AT 2026-04-18T11:01:46 DUE to SIGNAL Terminated ***
+---------------------------------------
+Begin Slurm Epilog: Apr-18-2026 11:01:48
+Job ID:        6621696
+User ID:       tma94
+Account:       paceship-terratrends
+Job name:      yp3-hyperopt
+Resources:     cpu=24,mem=32G,node=1
+Rsrc Used:     cput=5-12:37:36,vmem=0,walltime=05:31:34,mem=2783236K,energy_used=0
+Partition:     cpu-small
+QOS:           inferno
+Nodes:         atl1-1-02-017-34-2
+---------------------------------------

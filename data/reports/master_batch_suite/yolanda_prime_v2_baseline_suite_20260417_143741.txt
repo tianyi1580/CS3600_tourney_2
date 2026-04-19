@@ -1,0 +1,133 @@
+Master Batch Suite Report
+bot1: yolanda_prime_v2_baseline
+games_per_matchup: 300
+total_matchups: 7
+failures: 0
+generated_at: 2026-04-17T16:44:36
+
+================================================================================
+Matchup: yolanda_prime_v2_baseline vs yolanda_prime_v1_2
+Command: /Users/tianyima/Downloads/CS3600_tourney-1/.venv/bin/python /Users/tianyima/Downloads/CS3600_tourney-1/workflows/master_batch.py yolanda_prime_v2_baseline yolanda_prime_v1_2 --games 300 --quiet
+Exit code: 0
+--------------------------------------------------------------------------------
+FINAL SUMMARY: yolanda_prime_v2_baseline vs yolanda_prime_v1_2
+========================================
+Wins: yolanda_prime_v2_baseline=158, yolanda_prime_v1_2=140, Ties=2, Errors=0
+Match Score Mean (yolanda_prime_v2_baseline): 0.530 95% CI: [0.474, 0.586]
+Mean Point Delta: +2.56 95% CI: [0.84, 4.28]
+Elo: yolanda_prime_v2_baseline=1513.4, yolanda_prime_v1_2=1486.6 Δ=+13.4
+----------------------------------------
+yolanda_prime_v2_baseline Search Precision: 0.5335 (979/1835)
+yolanda_prime_v1_2   Search Precision: 0.5263 (1299/2468)
+----------------------------------------
+Reliability (Total): Timeouts=0, Invalid=0, Crashes=0
+Timeout Losses: yolanda_prime_v2_baseline=0, yolanda_prime_v1_2=0
+========================================
+================================================================================
+Matchup: yolanda_prime_v2_baseline vs yolanda_prime_v1_2Test
+Command: /Users/tianyima/Downloads/CS3600_tourney-1/.venv/bin/python /Users/tianyima/Downloads/CS3600_tourney-1/workflows/master_batch.py yolanda_prime_v2_baseline yolanda_prime_v1_2Test --games 300 --quiet
+Exit code: 0
+--------------------------------------------------------------------------------
+FINAL SUMMARY: yolanda_prime_v2_baseline vs yolanda_prime_v1_2Test
+========================================
+Wins: yolanda_prime_v2_baseline=150, yolanda_prime_v1_2Test=150, Ties=0, Errors=0
+Match Score Mean (yolanda_prime_v2_baseline): 0.500 95% CI: [0.443, 0.557]
+Mean Point Delta: +1.08 95% CI: [-0.75, 2.91]
+Elo: yolanda_prime_v2_baseline=1463.1, yolanda_prime_v1_2Test=1536.9 Δ=-36.9
+----------------------------------------
+yolanda_prime_v2_baseline Search Precision: 0.5428 (1065/1962)
+yolanda_prime_v1_2Test Search Precision: 0.5227 (1254/2399)
+----------------------------------------
+Reliability (Total): Timeouts=0, Invalid=0, Crashes=0
+Timeout Losses: yolanda_prime_v2_baseline=0, yolanda_prime_v1_2Test=0
+========================================
+================================================================================
+Matchup: yolanda_prime_v2_baseline vs yolanda_prime_v2
+Command: /Users/tianyima/Downloads/CS3600_tourney-1/.venv/bin/python /Users/tianyima/Downloads/CS3600_tourney-1/workflows/master_batch.py yolanda_prime_v2_baseline yolanda_prime_v2 --games 300 --quiet
+Exit code: 0
+--------------------------------------------------------------------------------
+FINAL SUMMARY: yolanda_prime_v2_baseline vs yolanda_prime_v2
+========================================
+Wins: yolanda_prime_v2_baseline=172, yolanda_prime_v2=126, Ties=2, Errors=0
+Match Score Mean (yolanda_prime_v2_baseline): 0.577 95% CI: [0.521, 0.632]
+Mean Point Delta: +3.24 95% CI: [1.63, 4.85]
+Elo: yolanda_prime_v2_baseline=1506.9, yolanda_prime_v2=1493.1 Δ=+6.9
+----------------------------------------
+yolanda_prime_v2_baseline Search Precision: 0.5553 (1109/1997)
+yolanda_prime_v2     Search Precision: 0.5356 (1173/2190)
+----------------------------------------
+Reliability (Total): Timeouts=0, Invalid=0, Crashes=0
+Timeout Losses: yolanda_prime_v2_baseline=0, yolanda_prime_v2=0
+========================================
+================================================================================
+Matchup: yolanda_prime_v2_baseline vs Yolanda6
+Command: /Users/tianyima/Downloads/CS3600_tourney-1/.venv/bin/python /Users/tianyima/Downloads/CS3600_tourney-1/workflows/master_batch.py yolanda_prime_v2_baseline Yolanda6 --games 300 --quiet
+Exit code: 0
+--------------------------------------------------------------------------------
+FINAL SUMMARY: yolanda_prime_v2_baseline vs Yolanda6
+========================================
+Wins: yolanda_prime_v2_baseline=184, Yolanda6=115, Ties=1, Errors=0
+Match Score Mean (yolanda_prime_v2_baseline): 0.615 95% CI: [0.560, 0.670]
+Mean Point Delta: +3.73 95% CI: [2.14, 5.32]
+Elo: yolanda_prime_v2_baseline=1517.5, Yolanda6=1482.5 Δ=+17.5
+----------------------------------------
+yolanda_prime_v2_baseline Search Precision: 0.5450 (1071/1965)
+Yolanda6             Search Precision: 0.5246 (1207/2301)
+----------------------------------------
+Reliability (Total): Timeouts=0, Invalid=0, Crashes=0
+Timeout Losses: yolanda_prime_v2_baseline=0, Yolanda6=0
+========================================
+================================================================================
+Matchup: yolanda_prime_v2_baseline vs Yolanda3_3
+Command: /Users/tianyima/Downloads/CS3600_tourney-1/.venv/bin/python /Users/tianyima/Downloads/CS3600_tourney-1/workflows/master_batch.py yolanda_prime_v2_baseline Yolanda3_3 --games 300 --quiet
+Exit code: 0
+--------------------------------------------------------------------------------
+FINAL SUMMARY: yolanda_prime_v2_baseline vs Yolanda3_3
+========================================
+Wins: yolanda_prime_v2_baseline=215, Yolanda3_3=85, Ties=0, Errors=0
+Match Score Mean (yolanda_prime_v2_baseline): 0.717 95% CI: [0.666, 0.768]
+Mean Point Delta: +9.21 95% CI: [7.53, 10.89]
+Elo: yolanda_prime_v2_baseline=1603.0, Yolanda3_3=1397.0 Δ=+103.0
+----------------------------------------
+yolanda_prime_v2_baseline Search Precision: 0.5273 (1023/1940)
+Yolanda3_3           Search Precision: 0.4956 (1452/2930)
+----------------------------------------
+Reliability (Total): Timeouts=0, Invalid=0, Crashes=0
+Timeout Losses: yolanda_prime_v2_baseline=0, Yolanda3_3=0
+========================================
+================================================================================
+Matchup: yolanda_prime_v2_baseline vs RandomSearchBaseline
+Command: /Users/tianyima/Downloads/CS3600_tourney-1/.venv/bin/python /Users/tianyima/Downloads/CS3600_tourney-1/workflows/master_batch.py yolanda_prime_v2_baseline RandomSearchBaseline --games 300 --quiet
+Exit code: 0
+--------------------------------------------------------------------------------
+FINAL SUMMARY: yolanda_prime_v2_baseline vs RandomSearchBaseline
+========================================
+Wins: yolanda_prime_v2_baseline=300, RandomSearchBaseline=0, Ties=0, Errors=0
+Match Score Mean (yolanda_prime_v2_baseline): 1.000 95% CI: [1.000, 1.000]
+Mean Point Delta: +68.59 95% CI: [67.31, 69.86]
+Elo: yolanda_prime_v2_baseline=1880.6, RandomSearchBaseline=1119.4 Δ=+380.6
+----------------------------------------
+yolanda_prime_v2_baseline Search Precision: 0.5964 (1005/1685)
+RandomSearchBaseline Search Precision: 0.0112 (34/3042)
+----------------------------------------
+Reliability (Total): Timeouts=0, Invalid=0, Crashes=0
+Timeout Losses: yolanda_prime_v2_baseline=0, RandomSearchBaseline=0
+========================================
+================================================================================
+Matchup: yolanda_prime_v2_baseline vs yolanda_prime_v1_2_baseline
+Command: /Users/tianyima/Downloads/CS3600_tourney-1/.venv/bin/python /Users/tianyima/Downloads/CS3600_tourney-1/workflows/master_batch.py yolanda_prime_v2_baseline yolanda_prime_v1_2_baseline --games 300 --quiet
+Exit code: 0
+--------------------------------------------------------------------------------
+FINAL SUMMARY: yolanda_prime_v2_baseline vs yolanda_prime_v1_2_baseline
+========================================
+Wins: yolanda_prime_v2_baseline=198, yolanda_prime_v1_2_baseline=102, Ties=0, Errors=0
+Match Score Mean (yolanda_prime_v2_baseline): 0.660 95% CI: [0.606, 0.714]
+Mean Point Delta: +6.35 95% CI: [4.86, 7.83]
+Elo: yolanda_prime_v2_baseline=1567.5, yolanda_prime_v1_2_baseline=1432.5 Δ=+67.5
+----------------------------------------
+yolanda_prime_v2_baseline Search Precision: 0.5722 (1010/1765)
+yolanda_prime_v1_2_baseline Search Precision: 0.5074 (1262/2487)
+----------------------------------------
+Reliability (Total): Timeouts=0, Invalid=0, Crashes=0
+Timeout Losses: yolanda_prime_v2_baseline=0, yolanda_prime_v1_2_baseline=0
+========================================

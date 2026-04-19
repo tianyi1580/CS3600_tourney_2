@@ -1,0 +1,28 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-16-2026 10:45:01
+Job ID:    6549835
+User ID:   tma94
+Account:   paceship-terratrends
+Job name:  yp12-hyperopt
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+Selected optimizer: cma
+Running hyperopt preflight...
+Preflight passed.
+/storage/home/hcoda1/7/tma94/CS3600_tourney/.venv/lib/python3.11/site-packages/cma/s.py:16: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+Resuming CMA from Generation 30...
+[2026-04-16T12:14:18.958] error: *** JOB 6549835 ON atl1-1-02-006-26-2 CANCELLED AT 2026-04-16T12:14:18 DUE to SIGNAL Terminated ***
+---------------------------------------
+Begin Slurm Epilog: Apr-16-2026 12:14:22
+Job ID:        6549835
+User ID:       tma94
+Account:       paceship-terratrends
+Job name:      yp12-hyperopt
+Resources:     cpu=16,mem=12G,node=1
+Rsrc Used:     cput=23:48:48,vmem=0,walltime=01:29:18,mem=218452K,energy_used=0
+Partition:     cpu-small
+QOS:           inferno
+Nodes:         atl1-1-02-006-26-2
+---------------------------------------

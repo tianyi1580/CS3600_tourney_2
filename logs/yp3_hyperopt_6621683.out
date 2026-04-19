@@ -1,0 +1,22 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-18-2026 05:24:53
+Job ID:    6621683
+User ID:   tma94
+Account:   paceship-terratrends
+Job name:  yp3-hyperopt
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+/var/lib/slurm/slurmd/job6621683/slurm_script: line 48: ENABLE_MERCY_RULE: unbound variable
+---------------------------------------
+Begin Slurm Epilog: Apr-18-2026 05:24:54
+Job ID:        6621683
+User ID:       tma94
+Account:       paceship-terratrends
+Job name:      yp3-hyperopt
+Resources:     cpu=24,mem=32G,node=1
+Rsrc Used:     cput=00:00:00,vmem=0,walltime=00:00:00,mem=3116K,energy_used=0
+Partition:     cpu-small
+QOS:           inferno
+Nodes:         atl1-1-02-005-25-1
+---------------------------------------

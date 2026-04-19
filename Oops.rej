@@ -1,0 +1,9 @@
+@@ -198,7 +208,7 @@
+                 if alpha >= beta:
+                     self._tt_hits += 1
+                     return tt_value
+ 
+         if maximizing:
+-            val = self._max_node(board, depth, alpha, beta)
++            val = self._max_node(board, depth, alpha, beta, current_map)
+         else:

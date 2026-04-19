@@ -1,0 +1,11 @@
+{
+  "match_root": "data/matches/yolanda_prime_v3_DO",
+  "file_count": 92,
+  "parsed_count": 92,
+  "fatal_count": 0,
+  "fatal_rate": 0.0,
+  "max_fatal_rate": 0.5,
+  "warning_count": 0,
+  "fatal_issues": [],
+  "warning_issues": []
+}

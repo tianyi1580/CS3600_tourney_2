@@ -1,0 +1,89 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-13-2026 16:39:57
+Job ID:    6502614
+User ID:   tma94
+Account:   paceship-terratrends
+Job name:  y4-hyperopt
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+/storage/home/hcoda1/7/tma94/CS3600_tourney/.venv/lib/python3.11/site-packages/cma/s.py:16: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+Selected optimizer: cma
+Running hyperopt preflight...
+Preflight passed.
+/storage/home/hcoda1/7/tma94/CS3600_tourney/.venv/lib/python3.11/site-packages/cma/s.py:16: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+Resuming CMA from legacy history at Generation 2...
+[16:48:34] Starting Generation 2...
+  Candidate 1/12 evaluated (fitness: 5.927)
+  Candidate 2/12 evaluated (fitness: 7.595)
+  Candidate 3/12 evaluated (fitness: 6.785)
+  Candidate 4/12 evaluated (fitness: 6.693)
+  Candidate 5/12 evaluated (fitness: 7.982)
+  Candidate 6/12 evaluated (fitness: 7.713)
+  Candidate 7/12 evaluated (fitness: 5.351)
+  Candidate 8/12 evaluated (fitness: 7.798)
+  Candidate 9/12 evaluated (fitness: 6.842)
+  Candidate 10/12 evaluated (fitness: 6.134)
+  Candidate 11/12 evaluated (fitness: 7.704)
+  Candidate 12/12 evaluated (fitness: 6.195)
+  Gen 2 Summary: Best=7.982 Mean=6.893 Worst=5.351
+[04:10:57] Starting Generation 3...
+  Candidate 1/12 evaluated (fitness: 9.450)
+  Candidate 2/12 evaluated (fitness: 8.490)
+  Candidate 3/12 evaluated (fitness: 7.949)
+  Candidate 4/12 evaluated (fitness: 9.996)
+  Candidate 5/12 evaluated (fitness: 6.504)
+  Candidate 6/12 evaluated (fitness: 7.521)
+  Candidate 7/12 evaluated (fitness: 7.613)
+  Candidate 8/12 evaluated (fitness: 7.900)
+  Candidate 9/12 evaluated (fitness: 8.457)
+  Candidate 10/12 evaluated (fitness: 8.304)
+  Candidate 11/12 evaluated (fitness: 8.671)
+  Candidate 12/12 evaluated (fitness: 6.758)
+  Gen 3 Summary: Best=9.996 Mean=8.134 Worst=6.504
+[15:33:52] Starting Generation 4...
+  Candidate 1/12 evaluated (fitness: 5.481)
+  Candidate 2/12 evaluated (fitness: 7.933)
+  Candidate 3/12 evaluated (fitness: 7.675)
+  Candidate 4/12 evaluated (fitness: 8.238)
+  Candidate 5/12 evaluated (fitness: 7.356)
+  Candidate 6/12 evaluated (fitness: 6.044)
+  Candidate 7/12 evaluated (fitness: 7.534)
+  Candidate 8/12 evaluated (fitness: 7.728)
+  Candidate 9/12 evaluated (fitness: 5.854)
+  Candidate 10/12 evaluated (fitness: 6.483)
+  Candidate 11/12 evaluated (fitness: 8.012)
+  Candidate 12/12 evaluated (fitness: 8.829)
+  Gen 4 Summary: Best=8.829 Mean=7.264 Worst=5.481
+  Performing strict mode validation...
+  [STRICT] PASSED
+[03:40:42] Starting Generation 5...
+  Candidate 1/12 evaluated (fitness: 7.164)
+  Candidate 2/12 evaluated (fitness: 7.334)
+  Candidate 3/12 evaluated (fitness: 7.164)
+  Candidate 4/12 evaluated (fitness: 8.508)
+  Candidate 5/12 evaluated (fitness: 7.547)
+  Candidate 6/12 evaluated (fitness: 8.537)
+  Candidate 7/12 evaluated (fitness: 7.931)
+  Candidate 8/12 evaluated (fitness: 8.882)
+  Candidate 9/12 evaluated (fitness: 6.784)
+  Candidate 10/12 evaluated (fitness: 6.811)
+  Candidate 11/12 evaluated (fitness: 8.331)
+  Candidate 12/12 evaluated (fitness: 6.907)
+  Gen 5 Summary: Best=8.882 Mean=7.658 Worst=6.784
+[15:03:35] Starting Generation 6...
+[2026-04-15T16:40:11.117] error: *** JOB 6502614 ON atl1-1-02-015-7-2 CANCELLED AT 2026-04-15T16:40:11 DUE TO TIME LIMIT ***
+---------------------------------------
+Begin Slurm Epilog: Apr-15-2026 16:40:13
+Job ID:        6502614
+User ID:       tma94
+Account:       paceship-terratrends
+Job name:      y4-hyperopt
+Resources:     cpu=16,mem=12G,node=1
+Rsrc Used:     cput=32-00:03:44,vmem=0,walltime=2-00:00:14,mem=3049.50M,energy_used=0
+Partition:     cpu-small
+QOS:           inferno
+Nodes:         atl1-1-02-015-7-2
+---------------------------------------

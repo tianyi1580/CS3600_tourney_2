@@ -1,0 +1,416 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-15-2026 00:05:55
+Job ID:    6522852
+User ID:   tma94
+Account:   paceship-terratrends
+Job name:  yp12-hyperopt
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+Selected optimizer: cma
+Running hyperopt preflight...
+Preflight passed.
+/storage/home/hcoda1/7/tma94/CS3600_tourney/.venv/lib/python3.11/site-packages/cma/s.py:16: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[00:06:52] Starting Generation 0...
+  Candidate 1/12 evaluated (fitness: 4.069)
+  Candidate 2/12 evaluated (fitness: 5.089)
+  Candidate 3/12 evaluated (fitness: 4.486)
+  Candidate 4/12 evaluated (fitness: 4.858)
+  Candidate 5/12 evaluated (fitness: 3.222)
+  Candidate 6/12 evaluated (fitness: 4.114)
+  Candidate 7/12 evaluated (fitness: 3.822)
+  Candidate 8/12 evaluated (fitness: 4.629)
+  Candidate 9/12 evaluated (fitness: 5.566)
+  Candidate 10/12 evaluated (fitness: 2.998)
+  Candidate 11/12 evaluated (fitness: 3.611)
+  Candidate 12/12 evaluated (fitness: 5.519)
+  Gen 0 Summary: Best=5.566 Mean=4.332 Worst=2.998
+[00:56:37] Starting Generation 1...
+  Candidate 1/12 evaluated (fitness: 7.450)
+  Candidate 2/12 evaluated (fitness: 6.023)
+  Candidate 3/12 evaluated (fitness: 6.196)
+  Candidate 4/12 evaluated (fitness: 4.214)
+  Candidate 5/12 evaluated (fitness: 6.937)
+  Candidate 6/12 evaluated (fitness: 6.784)
+  Candidate 7/12 evaluated (fitness: 6.874)
+  Candidate 8/12 evaluated (fitness: 5.053)
+  Candidate 9/12 evaluated (fitness: 5.008)
+  Candidate 10/12 evaluated (fitness: 6.721)
+  Candidate 11/12 evaluated (fitness: 6.997)
+  Candidate 12/12 evaluated (fitness: 6.315)
+  Gen 1 Summary: Best=7.450 Mean=6.214 Worst=4.214
+[01:46:31] Starting Generation 2...
+  Candidate 1/12 evaluated (fitness: 4.232)
+  Candidate 2/12 evaluated (fitness: 6.172)
+  Candidate 3/12 evaluated (fitness: 6.384)
+  Candidate 4/12 evaluated (fitness: 3.560)
+  Candidate 5/12 evaluated (fitness: 4.271)
+  Candidate 6/12 evaluated (fitness: 6.679)
+  Candidate 7/12 evaluated (fitness: 6.185)
+  Candidate 8/12 evaluated (fitness: 2.466)
+  Candidate 9/12 evaluated (fitness: 3.624)
+  Candidate 10/12 evaluated (fitness: 5.388)
+  Candidate 11/12 evaluated (fitness: 4.701)
+  Candidate 12/12 evaluated (fitness: 6.315)
+  Gen 2 Summary: Best=6.679 Mean=4.998 Worst=2.466
+[02:35:56] Starting Generation 3...
+  Candidate 1/12 evaluated (fitness: 6.502)
+  Candidate 2/12 evaluated (fitness: 4.639)
+  Candidate 3/12 evaluated (fitness: 6.803)
+  Candidate 4/12 evaluated (fitness: 5.960)
+  Candidate 5/12 evaluated (fitness: 6.781)
+  Candidate 6/12 evaluated (fitness: 6.392)
+  Candidate 7/12 evaluated (fitness: 5.711)
+  Candidate 8/12 evaluated (fitness: 5.005)
+  Candidate 9/12 evaluated (fitness: 5.083)
+  Candidate 10/12 evaluated (fitness: 6.421)
+  Candidate 11/12 evaluated (fitness: 4.544)
+  Candidate 12/12 evaluated (fitness: 6.247)
+  Gen 3 Summary: Best=6.803 Mean=5.841 Worst=4.544
+[03:25:55] Starting Generation 4...
+  Candidate 1/12 evaluated (fitness: 4.577)
+  Candidate 2/12 evaluated (fitness: 6.037)
+  Candidate 3/12 evaluated (fitness: 5.019)
+  Candidate 4/12 evaluated (fitness: 5.855)
+  Candidate 5/12 evaluated (fitness: 6.079)
+  Candidate 6/12 evaluated (fitness: 5.668)
+  Candidate 7/12 evaluated (fitness: 6.623)
+  Candidate 8/12 evaluated (fitness: 5.322)
+  Candidate 9/12 evaluated (fitness: 4.382)
+  Candidate 10/12 evaluated (fitness: 3.924)
+  Candidate 11/12 evaluated (fitness: 4.685)
+  Candidate 12/12 evaluated (fitness: 5.212)
+  Gen 4 Summary: Best=6.623 Mean=5.282 Worst=3.924
+  Performing strict mode validation...
+  [STRICT] PASSED
+[04:18:57] Starting Generation 5...
+  Candidate 1/12 evaluated (fitness: 2.989)
+  Candidate 2/12 evaluated (fitness: 3.005)
+  Candidate 3/12 evaluated (fitness: 3.684)
+  Candidate 4/12 evaluated (fitness: 3.476)
+  Candidate 5/12 evaluated (fitness: 2.828)
+  Candidate 6/12 evaluated (fitness: 3.972)
+  Candidate 7/12 evaluated (fitness: 3.603)
+  Candidate 8/12 evaluated (fitness: 2.885)
+  Candidate 9/12 evaluated (fitness: 2.387)
+  Candidate 10/12 evaluated (fitness: 3.905)
+  Candidate 11/12 evaluated (fitness: 3.670)
+  Candidate 12/12 evaluated (fitness: 2.968)
+  Gen 5 Summary: Best=3.972 Mean=3.281 Worst=2.387
+[05:09:02] Starting Generation 6...
+  Candidate 1/12 evaluated (fitness: 5.777)
+  Candidate 2/12 evaluated (fitness: 5.367)
+  Candidate 3/12 evaluated (fitness: 5.932)
+  Candidate 4/12 evaluated (fitness: 4.680)
+  Candidate 5/12 evaluated (fitness: 5.591)
+  Candidate 6/12 evaluated (fitness: 6.370)
+  Candidate 7/12 evaluated (fitness: 6.077)
+  Candidate 8/12 evaluated (fitness: 6.899)
+  Candidate 9/12 evaluated (fitness: 5.468)
+  Candidate 10/12 evaluated (fitness: 5.499)
+  Candidate 11/12 evaluated (fitness: 5.508)
+  Candidate 12/12 evaluated (fitness: 6.199)
+  Gen 6 Summary: Best=6.899 Mean=5.781 Worst=4.680
+[05:59:17] Starting Generation 7...
+  Candidate 1/12 evaluated (fitness: 5.115)
+  Candidate 2/12 evaluated (fitness: 5.599)
+  Candidate 3/12 evaluated (fitness: 5.015)
+  Candidate 4/12 evaluated (fitness: 5.169)
+  Candidate 5/12 evaluated (fitness: 4.527)
+  Candidate 6/12 evaluated (fitness: 5.215)
+  Candidate 7/12 evaluated (fitness: 4.097)
+  Candidate 8/12 evaluated (fitness: 5.114)
+  Candidate 9/12 evaluated (fitness: 4.968)
+  Candidate 10/12 evaluated (fitness: 4.131)
+  Candidate 11/12 evaluated (fitness: 4.515)
+  Candidate 12/12 evaluated (fitness: 4.820)
+  Gen 7 Summary: Best=5.599 Mean=4.857 Worst=4.097
+[06:48:39] Starting Generation 8...
+  Candidate 1/12 evaluated (fitness: 5.967)
+  Candidate 2/12 evaluated (fitness: 7.496)
+  Candidate 3/12 evaluated (fitness: 7.145)
+  Candidate 4/12 evaluated (fitness: 5.871)
+  Candidate 5/12 evaluated (fitness: 7.631)
+  Candidate 6/12 evaluated (fitness: 7.520)
+  Candidate 7/12 evaluated (fitness: 7.253)
+  Candidate 8/12 evaluated (fitness: 6.342)
+  Candidate 9/12 evaluated (fitness: 7.329)
+  Candidate 10/12 evaluated (fitness: 7.478)
+  Candidate 11/12 evaluated (fitness: 7.107)
+  Candidate 12/12 evaluated (fitness: 6.842)
+  Gen 8 Summary: Best=7.631 Mean=6.998 Worst=5.871
+[07:38:29] Starting Generation 9...
+  Candidate 1/12 evaluated (fitness: 7.238)
+  Candidate 2/12 evaluated (fitness: 6.041)
+  Candidate 3/12 evaluated (fitness: 6.882)
+  Candidate 4/12 evaluated (fitness: 7.712)
+  Candidate 5/12 evaluated (fitness: 7.217)
+  Candidate 6/12 evaluated (fitness: 8.104)
+  Candidate 7/12 evaluated (fitness: 8.273)
+  Candidate 8/12 evaluated (fitness: 6.742)
+  Candidate 9/12 evaluated (fitness: 6.954)
+  Candidate 10/12 evaluated (fitness: 7.279)
+  Candidate 11/12 evaluated (fitness: 7.545)
+  Candidate 12/12 evaluated (fitness: 7.541)
+  Gen 9 Summary: Best=8.273 Mean=7.294 Worst=6.041
+  Performing strict mode validation...
+  [STRICT] PASSED
+[08:32:25] Starting Generation 10...
+  Candidate 1/12 evaluated (fitness: 6.210)
+  Candidate 2/12 evaluated (fitness: 6.269)
+  Candidate 3/12 evaluated (fitness: 5.494)
+  Candidate 4/12 evaluated (fitness: 5.762)
+  Candidate 5/12 evaluated (fitness: 7.224)
+  Candidate 6/12 evaluated (fitness: 5.798)
+  Candidate 7/12 evaluated (fitness: 5.560)
+  Candidate 8/12 evaluated (fitness: 5.542)
+  Candidate 9/12 evaluated (fitness: 7.456)
+  Candidate 10/12 evaluated (fitness: 5.815)
+  Candidate 11/12 evaluated (fitness: 5.516)
+  Candidate 12/12 evaluated (fitness: 5.313)
+  Gen 10 Summary: Best=7.456 Mean=5.997 Worst=5.313
+[09:21:21] Starting Generation 11...
+  Candidate 1/12 evaluated (fitness: 4.591)
+  Candidate 2/12 evaluated (fitness: 4.698)
+  Candidate 3/12 evaluated (fitness: 3.886)
+  Candidate 4/12 evaluated (fitness: 3.775)
+  Candidate 5/12 evaluated (fitness: 3.769)
+  Candidate 6/12 evaluated (fitness: 4.692)
+  Candidate 7/12 evaluated (fitness: 4.098)
+  Candidate 8/12 evaluated (fitness: 4.817)
+  Candidate 9/12 evaluated (fitness: 4.502)
+  Candidate 10/12 evaluated (fitness: 4.503)
+  Candidate 11/12 evaluated (fitness: 3.909)
+  Candidate 12/12 evaluated (fitness: 4.685)
+  Gen 11 Summary: Best=4.817 Mean=4.327 Worst=3.769
+[10:10:47] Starting Generation 12...
+  Candidate 1/12 evaluated (fitness: 5.670)
+  Candidate 2/12 evaluated (fitness: 5.776)
+  Candidate 3/12 evaluated (fitness: 6.753)
+  Candidate 4/12 evaluated (fitness: 6.394)
+  Candidate 5/12 evaluated (fitness: 6.048)
+  Candidate 6/12 evaluated (fitness: 6.277)
+  Candidate 7/12 evaluated (fitness: 6.175)
+  Candidate 8/12 evaluated (fitness: 5.182)
+  Candidate 9/12 evaluated (fitness: 6.164)
+  Candidate 10/12 evaluated (fitness: 5.485)
+  Candidate 11/12 evaluated (fitness: 6.509)
+  Candidate 12/12 evaluated (fitness: 6.067)
+  Gen 12 Summary: Best=6.753 Mean=6.042 Worst=5.182
+[11:00:00] Starting Generation 13...
+  Candidate 1/12 evaluated (fitness: 5.200)
+  Candidate 2/12 evaluated (fitness: 4.935)
+  Candidate 3/12 evaluated (fitness: 5.241)
+  Candidate 4/12 evaluated (fitness: 5.139)
+  Candidate 5/12 evaluated (fitness: 4.935)
+  Candidate 6/12 evaluated (fitness: 5.483)
+  Candidate 7/12 evaluated (fitness: 5.064)
+  Candidate 8/12 evaluated (fitness: 5.074)
+  Candidate 9/12 evaluated (fitness: 5.758)
+  Candidate 10/12 evaluated (fitness: 5.978)
+  Candidate 11/12 evaluated (fitness: 5.066)
+  Candidate 12/12 evaluated (fitness: 5.815)
+  Gen 13 Summary: Best=5.978 Mean=5.307 Worst=4.935
+[11:49:35] Starting Generation 14...
+  Candidate 1/12 evaluated (fitness: 6.288)
+  Candidate 2/12 evaluated (fitness: 5.815)
+  Candidate 3/12 evaluated (fitness: 4.953)
+  Candidate 4/12 evaluated (fitness: 4.690)
+  Candidate 5/12 evaluated (fitness: 5.705)
+  Candidate 6/12 evaluated (fitness: 5.029)
+  Candidate 7/12 evaluated (fitness: 6.020)
+  Candidate 8/12 evaluated (fitness: 5.883)
+  Candidate 9/12 evaluated (fitness: 4.254)
+  Candidate 10/12 evaluated (fitness: 5.687)
+  Candidate 11/12 evaluated (fitness: 5.519)
+  Candidate 12/12 evaluated (fitness: 5.272)
+  Gen 14 Summary: Best=6.288 Mean=5.426 Worst=4.254
+  Performing strict mode validation...
+  [STRICT] PASSED
+[12:42:57] Starting Generation 15...
+  Candidate 1/12 evaluated (fitness: 5.724)
+  Candidate 2/12 evaluated (fitness: 4.495)
+  Candidate 3/12 evaluated (fitness: 5.012)
+  Candidate 4/12 evaluated (fitness: 5.048)
+  Candidate 5/12 evaluated (fitness: 4.579)
+  Candidate 6/12 evaluated (fitness: 5.270)
+  Candidate 7/12 evaluated (fitness: 5.248)
+  Candidate 8/12 evaluated (fitness: 4.620)
+  Candidate 9/12 evaluated (fitness: 6.378)
+  Candidate 10/12 evaluated (fitness: 4.425)
+  Candidate 11/12 evaluated (fitness: 5.080)
+  Candidate 12/12 evaluated (fitness: 4.963)
+  Gen 15 Summary: Best=6.378 Mean=5.070 Worst=4.425
+[13:32:32] Starting Generation 16...
+  Candidate 1/12 evaluated (fitness: 5.533)
+  Candidate 2/12 evaluated (fitness: 5.366)
+  Candidate 3/12 evaluated (fitness: 4.435)
+  Candidate 4/12 evaluated (fitness: 4.834)
+  Candidate 5/12 evaluated (fitness: 5.733)
+  Candidate 6/12 evaluated (fitness: 4.580)
+  Candidate 7/12 evaluated (fitness: 5.232)
+  Candidate 8/12 evaluated (fitness: 5.170)
+  Candidate 9/12 evaluated (fitness: 4.325)
+  Candidate 10/12 evaluated (fitness: 4.602)
+  Candidate 11/12 evaluated (fitness: 5.666)
+  Candidate 12/12 evaluated (fitness: 4.045)
+  Gen 16 Summary: Best=5.733 Mean=4.960 Worst=4.045
+[14:22:07] Starting Generation 17...
+  Candidate 1/12 evaluated (fitness: 5.076)
+  Candidate 2/12 evaluated (fitness: 4.186)
+  Candidate 3/12 evaluated (fitness: 4.641)
+  Candidate 4/12 evaluated (fitness: 4.594)
+  Candidate 5/12 evaluated (fitness: 5.628)
+  Candidate 6/12 evaluated (fitness: 5.862)
+  Candidate 7/12 evaluated (fitness: 4.060)
+  Candidate 8/12 evaluated (fitness: 4.099)
+  Candidate 9/12 evaluated (fitness: 3.824)
+  Candidate 10/12 evaluated (fitness: 3.110)
+  Candidate 11/12 evaluated (fitness: 4.107)
+  Candidate 12/12 evaluated (fitness: 3.533)
+  Gen 17 Summary: Best=5.862 Mean=4.393 Worst=3.110
+[15:11:30] Starting Generation 18...
+  Candidate 1/12 evaluated (fitness: 6.211)
+  Candidate 2/12 evaluated (fitness: 7.062)
+  Candidate 3/12 evaluated (fitness: 7.305)
+  Candidate 4/12 evaluated (fitness: 7.118)
+  Candidate 5/12 evaluated (fitness: 6.746)
+  Candidate 6/12 evaluated (fitness: 6.579)
+  Candidate 7/12 evaluated (fitness: 6.725)
+  Candidate 8/12 evaluated (fitness: 6.582)
+  Candidate 9/12 evaluated (fitness: 7.559)
+  Candidate 10/12 evaluated (fitness: 7.631)
+  Candidate 11/12 evaluated (fitness: 6.620)
+  Candidate 12/12 evaluated (fitness: 7.156)
+  Gen 18 Summary: Best=7.631 Mean=6.941 Worst=6.211
+[16:00:17] Starting Generation 19...
+  Candidate 1/12 evaluated (fitness: 4.776)
+  Candidate 2/12 evaluated (fitness: 4.949)
+  Candidate 3/12 evaluated (fitness: 4.318)
+  Candidate 4/12 evaluated (fitness: 4.946)
+  Candidate 5/12 evaluated (fitness: 4.319)
+  Candidate 6/12 evaluated (fitness: 4.669)
+  Candidate 7/12 evaluated (fitness: 4.738)
+  Candidate 8/12 evaluated (fitness: 4.402)
+  Candidate 9/12 evaluated (fitness: 4.125)
+  Candidate 10/12 evaluated (fitness: 4.446)
+  Candidate 11/12 evaluated (fitness: 4.733)
+  Candidate 12/12 evaluated (fitness: 4.753)
+  Gen 19 Summary: Best=4.949 Mean=4.598 Worst=4.125
+  Performing strict mode validation...
+  [STRICT] PASSED
+[16:53:37] Starting Generation 20...
+  Candidate 1/12 evaluated (fitness: 6.441)
+  Candidate 2/12 evaluated (fitness: 6.721)
+  Candidate 3/12 evaluated (fitness: 6.518)
+  Candidate 4/12 evaluated (fitness: 6.514)
+  Candidate 5/12 evaluated (fitness: 6.623)
+  Candidate 6/12 evaluated (fitness: 7.133)
+  Candidate 7/12 evaluated (fitness: 7.082)
+  Candidate 8/12 evaluated (fitness: 6.517)
+  Candidate 9/12 evaluated (fitness: 6.631)
+  Candidate 10/12 evaluated (fitness: 6.912)
+  Candidate 11/12 evaluated (fitness: 6.237)
+  Candidate 12/12 evaluated (fitness: 7.428)
+  Gen 20 Summary: Best=7.428 Mean=6.730 Worst=6.237
+[17:43:54] Starting Generation 21...
+  Candidate 1/12 evaluated (fitness: 5.336)
+  Candidate 2/12 evaluated (fitness: 5.203)
+  Candidate 3/12 evaluated (fitness: 5.876)
+  Candidate 4/12 evaluated (fitness: 5.582)
+  Candidate 5/12 evaluated (fitness: 4.986)
+  Candidate 6/12 evaluated (fitness: 5.377)
+  Candidate 7/12 evaluated (fitness: 5.838)
+  Candidate 8/12 evaluated (fitness: 5.457)
+  Candidate 9/12 evaluated (fitness: 5.130)
+  Candidate 10/12 evaluated (fitness: 5.763)
+  Candidate 11/12 evaluated (fitness: 5.609)
+  Candidate 12/12 evaluated (fitness: 5.162)
+  Gen 21 Summary: Best=5.876 Mean=5.443 Worst=4.986
+[18:34:20] Starting Generation 22...
+  Candidate 1/12 evaluated (fitness: 6.463)
+  Candidate 2/12 evaluated (fitness: 5.351)
+  Candidate 3/12 evaluated (fitness: 5.302)
+  Candidate 4/12 evaluated (fitness: 5.706)
+  Candidate 5/12 evaluated (fitness: 5.939)
+  Candidate 6/12 evaluated (fitness: 6.003)
+  Candidate 7/12 evaluated (fitness: 6.355)
+  Candidate 8/12 evaluated (fitness: 6.229)
+  Candidate 9/12 evaluated (fitness: 6.359)
+  Candidate 10/12 evaluated (fitness: 6.160)
+  Candidate 11/12 evaluated (fitness: 6.590)
+  Candidate 12/12 evaluated (fitness: 5.872)
+  Gen 22 Summary: Best=6.590 Mean=6.027 Worst=5.302
+[19:24:00] Starting Generation 23...
+  Candidate 1/12 evaluated (fitness: 4.847)
+  Candidate 2/12 evaluated (fitness: 4.463)
+  Candidate 3/12 evaluated (fitness: 5.123)
+  Candidate 4/12 evaluated (fitness: 5.327)
+  Candidate 5/12 evaluated (fitness: 4.752)
+  Candidate 6/12 evaluated (fitness: 5.325)
+  Candidate 7/12 evaluated (fitness: 4.818)
+  Candidate 8/12 evaluated (fitness: 4.077)
+  Candidate 9/12 evaluated (fitness: 4.333)
+  Candidate 10/12 evaluated (fitness: 5.314)
+  Candidate 11/12 evaluated (fitness: 4.817)
+  Candidate 12/12 evaluated (fitness: 4.132)
+  Gen 23 Summary: Best=5.327 Mean=4.777 Worst=4.077
+[20:13:42] Starting Generation 24...
+  Candidate 1/12 evaluated (fitness: 7.164)
+  Candidate 2/12 evaluated (fitness: 6.059)
+  Candidate 3/12 evaluated (fitness: 6.241)
+  Candidate 4/12 evaluated (fitness: 7.616)
+  Candidate 5/12 evaluated (fitness: 7.924)
+  Candidate 6/12 evaluated (fitness: 6.933)
+  Candidate 7/12 evaluated (fitness: 6.122)
+  Candidate 8/12 evaluated (fitness: 7.588)
+  Candidate 9/12 evaluated (fitness: 7.873)
+  Candidate 10/12 evaluated (fitness: 5.835)
+  Candidate 11/12 evaluated (fitness: 7.237)
+  Candidate 12/12 evaluated (fitness: 6.576)
+  Gen 24 Summary: Best=7.924 Mean=6.931 Worst=5.835
+  Performing strict mode validation...
+  [STRICT] PASSED
+[21:07:46] Starting Generation 25...
+  Candidate 1/12 evaluated (fitness: 5.419)
+  Candidate 2/12 evaluated (fitness: 5.791)
+  Candidate 3/12 evaluated (fitness: 5.623)
+  Candidate 4/12 evaluated (fitness: 5.249)
+  Candidate 5/12 evaluated (fitness: 5.727)
+  Candidate 6/12 evaluated (fitness: 5.078)
+  Candidate 7/12 evaluated (fitness: 5.315)
+  Candidate 8/12 evaluated (fitness: 5.082)
+  Candidate 9/12 evaluated (fitness: 5.572)
+  Candidate 10/12 evaluated (fitness: 5.253)
+  Candidate 11/12 evaluated (fitness: 5.262)
+  Candidate 12/12 evaluated (fitness: 5.031)
+  Gen 25 Summary: Best=5.791 Mean=5.367 Worst=5.031
+[21:58:15] Starting Generation 26...
+  Candidate 1/12 evaluated (fitness: 6.464)
+  Candidate 2/12 evaluated (fitness: 7.895)
+  Candidate 3/12 evaluated (fitness: 6.529)
+  Candidate 4/12 evaluated (fitness: 6.698)
+  Candidate 5/12 evaluated (fitness: 6.901)
+  Candidate 6/12 evaluated (fitness: 6.836)
+  Candidate 7/12 evaluated (fitness: 7.105)
+  Candidate 8/12 evaluated (fitness: 7.230)
+  Candidate 9/12 evaluated (fitness: 6.965)
+  Candidate 10/12 evaluated (fitness: 6.681)
+  Candidate 11/12 evaluated (fitness: 6.475)
+  Candidate 12/12 evaluated (fitness: 6.729)
+  Gen 26 Summary: Best=7.895 Mean=6.876 Worst=6.464
+[22:47:53] Starting Generation 27...
+[2026-04-15T22:49:02.214] error: *** JOB 6522852 ON atl1-1-02-002-23-1 CANCELLED AT 2026-04-15T22:49:02 DUE to SIGNAL Terminated ***
+---------------------------------------
+Begin Slurm Epilog: Apr-15-2026 22:49:04
+Job ID:        6522852
+User ID:       tma94
+Account:       paceship-terratrends
+Job name:      yp12-hyperopt
+Resources:     cpu=16,mem=12G,node=1
+Rsrc Used:     cput=15-03:30:08,vmem=0,walltime=22:43:08,mem=1037748K,energy_used=0
+Partition:     cpu-small
+QOS:           inferno
+Nodes:         atl1-1-02-002-23-1
+---------------------------------------

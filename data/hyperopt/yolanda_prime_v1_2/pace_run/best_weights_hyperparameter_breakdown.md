@@ -1,0 +1,38 @@
+# yolanda_prime_v1_2 `best_weights.json` hyperparameter breakdown
+
+- `a` (`1.2316`): Multiplies immediate points in move scoring, so higher `a` makes the agent greedier for instant PRIME/CARPET score right now.
+- `b` (`0.8414`): Multiplies positional quality (mobility, centrality, and nearby space), so higher `b` prioritizes landing on flexible, high-option squares.
+- `c` (`2.4438`): Multiplies carpet setup potential (future chain conversion value), so higher `c` favors moves that build toward strong carpet cashouts.
+- `d` (`0.1347`): Multiplies denial value (blocking opponent options/entries), so higher `d` makes the bot more willing to spend turns interfering with opponent plans.
+- `f` (`0.7768`): Multiplies risk penalties (traps, low-exit landings), so higher `f` makes play safer and less willing to accept tactical danger.
+- `g` (`0.2636`): Penalizes board fragmentation caused by your carpet moves, so higher `g` discourages splitting open space into disconnected regions.
+- `opening_centrality_scale` (`1.2476`): Scales center-control bonus in opening turns, so higher values push early movement toward central board control.
+- `mid_lead_centrality_scale` (`1.0876`): Midgame centrality scale while ahead, so higher values keep a leading agent centralized instead of drifting to edges.
+- `mid_trailing_centrality_scale` (`1.2490`): Midgame centrality scale while behind, so higher values emphasize center access more when trying to recover.
+- `late_centrality_scale` (`0.0951`): Late-game centrality scale, so lower values mean endgame choices care much less about center and more about direct scoring/tactics.
+- `mid_lead_space_bonus` (`1.2036`): Extra midgame bonus (when ahead) for stepping onto `SPACE`, encouraging safe board-shaping and mobility-preserving movement while protecting a lead.
+- `threatened_cashout_bonus` (`1.3861`): Extra reward for carpeting a threatened chain (enemy near the path), making the bot more likely to cash out before disruption.
+- `sabotage_bonus` (`3.8398`): Bonus for moves that occupy/contest opponent-accessible chain entry zones, making anti-opponent interference significantly more aggressive.
+- `fast_search_prob_threshold` (`0.9492`): If fast-search shortcut is enabled, this is the minimum top rat belief needed to auto-search; higher means search only when confidence is very high.
+- `fast_search_max_carpet_points` (`12.2856`): If fast-search shortcut is enabled, auto-search is allowed only when immediate carpet alternatives are below this value, preventing search when a big carpet is available.
+- `opening_mult_a` (`1.2`): Opening-phase multiplier on `a`, increasing/decreasing how much immediate points matter early.
+- `opening_mult_b` (`1.0`): Opening-phase multiplier on `b`, controlling how strongly opening play values positional quality.
+- `opening_mult_c` (`1.5`): Opening-phase multiplier on `c`, strongly boosting chain-building/setup emphasis in early turns.
+- `opening_mult_d` (`0.4`): Opening-phase multiplier on `d`, downweighting pure denial in early turns so opening play stays more developmental.
+- `opening_mult_f` (`1.0`): Opening-phase multiplier on `f`, setting baseline risk sensitivity during opening.
+- `mid_mult_a` (`1.0`): Midgame multiplier on `a`, keeping immediate-point greed at base level in midgame.
+- `mid_mult_b` (`0.8`): Midgame multiplier on `b`, slightly reducing raw positional weighting compared with base.
+- `mid_mult_c` (`1.5`): Midgame multiplier on `c`, keeping setup/cashout-potential pressure high in the middle phase.
+- `mid_mult_d` (`0.8`): Midgame multiplier on `d`, modestly reducing denial emphasis vs base in midgame.
+- `mid_mult_f` (`1.0`): Midgame multiplier on `f`, maintaining base risk aversion level in midgame.
+- `late_mult_a` (`1.5`): Late-game multiplier on `a`, increasing urgency for immediate points near the end.
+- `late_mult_b` (`0.3`): Late-game multiplier on `b`, sharply reducing positional-aesthetic concerns in favor of concrete scoring lines.
+- `late_mult_c` (`0.5`): Late-game multiplier on `c`, reducing long-horizon setup weighting when there is less time left to realize it.
+- `late_mult_d` (`1.2`): Late-game multiplier on `d`, increasing denial value in endgame races where blocking can swing outcome quickly.
+- `late_mult_f` (`0.5`): Late-game multiplier on `f`, lowering risk penalties so the bot can accept tactical risk for points/denial late.
+- `time_opening_multiplier` (`1.8`): Scales per-turn compute allocation in early turns, so higher means more think time spent in opening.
+- `time_mid_multiplier` (`1.4`): Scales per-turn compute allocation in midgame, controlling how much of remaining clock is consumed midgame.
+- `time_late_multiplier` (`1.0`): Scales per-turn compute allocation late, where lower/higher values make endgame thinking lighter/heavier.
+- `time_opening_cap` (`8.0`): Hard upper cap (seconds) on a single opening-turn allocation, preventing opening over-spend.
+- `time_mid_cap` (`6.0`): Hard upper cap (seconds) on a single midgame-turn allocation.
+- `time_late_cap` (`3.0`): Hard upper cap (seconds) on a single late-turn allocation, preserving enough budget for final turns.

@@ -1,0 +1,43 @@
+Master Batch Suite Report
+bot1: RandomSearchBaseline
+games_per_matchup: 2
+total_matchups: 2
+failures: 0
+generated_at: 2026-04-17T23:14:04
+
+================================================================================
+Matchup: RandomSearchBaseline vs Yolanda
+Command: /Users/tianyima/Downloads/CS3600_tourney-1/.venv/bin/python /Users/tianyima/Downloads/CS3600_tourney-1/workflows/master_batch.py RandomSearchBaseline Yolanda --games 2 --quiet
+Exit code: 0
+--------------------------------------------------------------------------------
+FINAL SUMMARY: RandomSearchBaseline vs Yolanda
+========================================
+Wins: RandomSearchBaseline=0, Yolanda=2, Ties=0, Errors=0
+Match Score Mean (RandomSearchBaseline): 0.000 95% CI: [0.000, 0.000]
+Mean Point Delta: -47.00 95% CI: [-72.48, -21.52]
+Elo: RandomSearchBaseline=1476.8, Yolanda=1523.2 Δ=-23.2
+----------------------------------------
+RandomSearchBaseline Search Precision: 0.0000 (0/22)
+Yolanda              Search Precision: 0.5294 (9/17)
+----------------------------------------
+Reliability (Total): Timeouts=0, Invalid=0, Crashes=0
+Timeout Losses: RandomSearchBaseline=0, Yolanda=0
+========================================
+================================================================================
+Matchup: RandomSearchBaseline vs Yolanda1
+Command: /Users/tianyima/Downloads/CS3600_tourney-1/.venv/bin/python /Users/tianyima/Downloads/CS3600_tourney-1/workflows/master_batch.py RandomSearchBaseline Yolanda1 --games 2 --quiet
+Exit code: 0
+--------------------------------------------------------------------------------
+FINAL SUMMARY: RandomSearchBaseline vs Yolanda1
+========================================
+Wins: RandomSearchBaseline=0, Yolanda1=2, Ties=0, Errors=0
+Match Score Mean (RandomSearchBaseline): 0.000 95% CI: [0.000, 0.000]
+Mean Point Delta: -48.00 95% CI: [-53.88, -42.12]
+Elo: RandomSearchBaseline=1476.8, Yolanda1=1523.2 Δ=-23.2
+----------------------------------------
+RandomSearchBaseline Search Precision: 0.0000 (0/20)
+Yolanda1             Search Precision: 0.4800 (12/25)
+----------------------------------------
+Reliability (Total): Timeouts=0, Invalid=0, Crashes=0
+Timeout Losses: RandomSearchBaseline=0, Yolanda1=0
+========================================

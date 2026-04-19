@@ -1,0 +1,102 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-16-2026 20:08:55
+Job ID:    6573168
+User ID:   tma94
+Account:   paceship-terratrends
+Job name:  yp2-hyperopt
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+RUN_DIR=data/hyperopt/yolanda_prime_v2/pace_run GENERATIONS=30 POPULATION=16 SIGMA=0.20 WORKERS=16 RUN_PHASE2=0
+Selected optimizer: cma
+Candidate agent: yolanda_prime_v2  (env: YP2_WEIGHTS_JSON)
+Running hyperopt preflight...
+Preflight passed.
+/storage/home/hcoda1/7/tma94/CS3600_tourney/.venv/lib/python3.11/site-packages/cma/s.py:16: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[20:10:19] Starting Generation 0...
+  Candidate 1/16 evaluated (fitness: 0.043)
+  Candidate 2/16 evaluated (fitness: -0.788)
+  Candidate 3/16 evaluated (fitness: -0.852)
+  Candidate 4/16 evaluated (fitness: 0.448)
+  Candidate 5/16 evaluated (fitness: 0.540)
+  Candidate 6/16 evaluated (fitness: -1.322)
+  Candidate 7/16 evaluated (fitness: -0.151)
+  Candidate 8/16 evaluated (fitness: -0.826)
+  Candidate 9/16 evaluated (fitness: -0.680)
+  Candidate 10/16 evaluated (fitness: -0.894)
+  Candidate 11/16 evaluated (fitness: 0.025)
+  Candidate 12/16 evaluated (fitness: -1.115)
+  Candidate 13/16 evaluated (fitness: -0.855)
+  Candidate 14/16 evaluated (fitness: 0.352)
+  Candidate 15/16 evaluated (fitness: 0.150)
+  Candidate 16/16 evaluated (fitness: -0.291)
+  Gen 0 Summary: Best=0.540 Mean=-0.389 Worst=-1.322
+[20:56:22] Starting Generation 1...
+  Candidate 1/16 evaluated (fitness: 0.666)
+  Candidate 2/16 evaluated (fitness: 0.287)
+  Candidate 3/16 evaluated (fitness: 0.537)
+  Candidate 4/16 evaluated (fitness: 1.141)
+  Candidate 5/16 evaluated (fitness: 0.494)
+  Candidate 6/16 evaluated (fitness: 0.464)
+  Candidate 7/16 evaluated (fitness: 0.861)
+  Candidate 8/16 evaluated (fitness: 0.245)
+  Candidate 9/16 evaluated (fitness: 1.160)
+  Candidate 10/16 evaluated (fitness: 1.392)
+  Candidate 11/16 evaluated (fitness: 1.927)
+  Candidate 12/16 evaluated (fitness: 2.144)
+  Candidate 13/16 evaluated (fitness: 0.848)
+  Candidate 14/16 evaluated (fitness: -0.238)
+  Candidate 15/16 evaluated (fitness: 1.096)
+  Candidate 16/16 evaluated (fitness: 1.825)
+  Gen 1 Summary: Best=2.144 Mean=0.928 Worst=-0.238
+[21:42:32] Starting Generation 2...
+  Candidate 1/16 evaluated (fitness: 0.995)
+  Candidate 2/16 evaluated (fitness: 0.479)
+  Candidate 3/16 evaluated (fitness: 0.496)
+  Candidate 4/16 evaluated (fitness: 0.872)
+  Candidate 5/16 evaluated (fitness: 0.208)
+  Candidate 6/16 evaluated (fitness: 0.621)
+  Candidate 7/16 evaluated (fitness: 0.844)
+  Candidate 8/16 evaluated (fitness: 0.517)
+  Candidate 9/16 evaluated (fitness: 0.521)
+  Candidate 10/16 evaluated (fitness: 0.254)
+  Candidate 11/16 evaluated (fitness: 0.419)
+  Candidate 12/16 evaluated (fitness: 0.063)
+  Candidate 13/16 evaluated (fitness: 0.278)
+  Candidate 14/16 evaluated (fitness: -0.737)
+  Candidate 15/16 evaluated (fitness: -0.567)
+  Candidate 16/16 evaluated (fitness: 0.954)
+  Gen 2 Summary: Best=0.995 Mean=0.389 Worst=-0.737
+[22:28:19] Starting Generation 3...
+  Candidate 1/16 evaluated (fitness: 1.137)
+  Candidate 2/16 evaluated (fitness: 1.126)
+  Candidate 3/16 evaluated (fitness: 0.648)
+  Candidate 4/16 evaluated (fitness: 1.348)
+  Candidate 5/16 evaluated (fitness: 1.154)
+  Candidate 6/16 evaluated (fitness: 0.779)
+  Candidate 7/16 evaluated (fitness: 0.790)
+  Candidate 8/16 evaluated (fitness: -0.580)
+  Candidate 9/16 evaluated (fitness: 0.282)
+  Candidate 10/16 evaluated (fitness: 0.161)
+  Candidate 11/16 evaluated (fitness: 1.884)
+  Candidate 12/16 evaluated (fitness: 0.966)
+  Candidate 13/16 evaluated (fitness: 0.704)
+  Candidate 14/16 evaluated (fitness: -0.160)
+  Candidate 15/16 evaluated (fitness: 0.015)
+  Candidate 16/16 evaluated (fitness: 1.375)
+  Gen 3 Summary: Best=1.884 Mean=0.727 Worst=-0.580
+[23:14:36] Starting Generation 4...
+[2026-04-16T23:28:13.293] error: *** JOB 6573168 ON atl1-1-02-005-9-1 CANCELLED AT 2026-04-16T23:28:13 DUE to SIGNAL Terminated ***
+---------------------------------------
+Begin Slurm Epilog: Apr-16-2026 23:28:15
+Job ID:        6573168
+User ID:       tma94
+Account:       paceship-terratrends
+Job name:      yp2-hyperopt
+Resources:     cpu=16,mem=12G,node=1
+Rsrc Used:     cput=2-05:09:20,vmem=0,walltime=03:19:20,mem=630676K,energy_used=0
+Partition:     cpu-small
+QOS:           inferno
+Nodes:         atl1-1-02-005-9-1
+---------------------------------------

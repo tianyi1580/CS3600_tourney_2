@@ -1,0 +1,38 @@
+{
+  "best_fitness": 12.579999999999998,
+  "generation": 2,
+  "generation_telemetry": {
+    "candidate_count": 24,
+    "evaluated_games_total": 240,
+    "generation_eval_mode": "flattened",
+    "planned_games_per_candidate": 10,
+    "pruned_candidates": 0,
+    "target_games_per_candidate": 10,
+    "workers": 24
+  },
+  "mean_fitness": 4.775833333333334,
+  "strict_validation_details": null,
+  "strict_validation_passed": null,
+  "weights": {
+    "alpha": 1.0926840651549017,
+    "beta": 0.35921112770699437,
+    "delta": 0.034035265119250875,
+    "epsilon": 0.08867521958020838,
+    "gamma": 0.24940581663318062,
+    "info_entropy_gate": 0.75,
+    "lambda_denial": 0.3,
+    "omega_threat": 0.4930797556198471,
+    "search_gate_base_farm": 0.22,
+    "search_gate_base_nonfarm": 0.35,
+    "search_gate_slope_farm": 0.22,
+    "search_gate_slope_nonfarm": 0.5,
+    "time_complex_max": 1.6,
+    "time_complex_min": 0.7,
+    "time_fraction_cap": 0.25,
+    "time_late_multiplier": 1.2,
+    "time_mid_multiplier": 1.6,
+    "time_opening_multiplier": 1.8,
+    "time_reserve": 5.0
+  },
+  "worst_fitness": -1.08
+}

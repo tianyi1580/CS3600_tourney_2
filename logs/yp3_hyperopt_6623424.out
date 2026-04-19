@@ -1,0 +1,30 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-18-2026 11:02:59
+Job ID:    6623424
+User ID:   tma94
+Account:   paceship-terratrends
+Job name:  yp3-hyperopt
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+Starting YP3 Stage 1: Core Evaluator Optimization...
+Selected optimizer: cma
+Candidate agent: yolanda_prime_v3  (env: YP3_WEIGHTS_JSON)
+Generation evaluation config: mode=flattened dynamic_budget=True budget_schedule=0-5:10,6-15:16,16-9999:24 mercy_enabled=True
+Running hyperopt preflight...
+Preflight passed.
+/storage/home/hcoda1/7/tma94/CS3600_tourney/.venv/lib/python3.11/site-packages/cma/s.py:16: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+Resuming CMA from Generation 2...
+[11:24:48] Starting Generation 2...
+  Eval telemetry: mode=flattened planned/candidate=10 evaluated_total=240 pruned=0
+  Gen 2 Summary: Best=12.580 Mean=4.776 Worst=-1.080
+[12:20:43] Starting Generation 3...
+  Eval telemetry: mode=flattened planned/candidate=10 evaluated_total=240 pruned=0
+  Gen 3 Summary: Best=19.780 Mean=5.240 Worst=-3.140
+[13:15:29] Starting Generation 4...
+  Eval telemetry: mode=flattened planned/candidate=10 evaluated_total=240 pruned=0
+  Gen 4 Summary: Best=15.060 Mean=3.118 Worst=-7.840
+  Performing strict mode validation...
+  [STRICT] PASSED
+[15:03:43] Starting Generation 5...

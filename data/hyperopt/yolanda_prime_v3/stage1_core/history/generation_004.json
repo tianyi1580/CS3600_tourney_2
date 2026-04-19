@@ -1,0 +1,81 @@
+{
+  "best_fitness": 15.06,
+  "generation": 4,
+  "generation_telemetry": {
+    "candidate_count": 24,
+    "evaluated_games_total": 240,
+    "generation_eval_mode": "flattened",
+    "planned_games_per_candidate": 10,
+    "pruned_candidates": 0,
+    "target_games_per_candidate": 10,
+    "workers": 24
+  },
+  "mean_fitness": 3.1183333333333336,
+  "strict_validation_details": [
+    {
+      "avg_margin": 6.6,
+      "catastrophic_losses": 0,
+      "crashes": 0,
+      "failed_inits": 0,
+      "games": 5,
+      "invalid_turns": 0,
+      "losses": 0,
+      "margins": [
+        3.0,
+        5.0,
+        0.0,
+        19.0,
+        6.0
+      ],
+      "memory_errors": 0,
+      "opponent_name": "yolanda_prime_v3_baseline",
+      "ties": 1,
+      "timeouts": 0,
+      "wins": 4
+    },
+    {
+      "avg_margin": 10.2,
+      "catastrophic_losses": 0,
+      "crashes": 0,
+      "failed_inits": 0,
+      "games": 5,
+      "invalid_turns": 0,
+      "losses": 1,
+      "margins": [
+        25.0,
+        -10.0,
+        6.0,
+        5.0,
+        25.0
+      ],
+      "memory_errors": 0,
+      "opponent_name": "yolanda_prime_v2",
+      "ties": 0,
+      "timeouts": 0,
+      "wins": 4
+    }
+  ],
+  "strict_validation_passed": true,
+  "weights": {
+    "alpha": 1.2179412037534434,
+    "beta": 0.5426964999725914,
+    "delta": 0.01231244431004415,
+    "epsilon": 0.08509842618660907,
+    "gamma": 0.14323647194881967,
+    "info_entropy_gate": 0.75,
+    "lambda_denial": 0.3,
+    "omega_threat": 0.41918858608979714,
+    "search_gate_base_farm": 0.22,
+    "search_gate_base_nonfarm": 0.35,
+    "search_gate_slope_farm": 0.22,
+    "search_gate_slope_nonfarm": 0.5,
+    "time_complex_max": 1.6,
+    "time_complex_min": 0.7,
+    "time_fraction_cap": 0.25,
+    "time_late_multiplier": 1.2,
+    "time_mid_multiplier": 1.6,
+    "time_opening_multiplier": 1.8,
+    "time_reserve": 5.0
+  },
+  "worst_fitness": -7.84
+}
