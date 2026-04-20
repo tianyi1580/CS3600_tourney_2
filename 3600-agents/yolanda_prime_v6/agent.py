@@ -36,7 +36,7 @@ class ConfiguredPlayerAgent:
         weights_root: Path | None = None,
         weights_file_name: str = "weights.json",
         allow_env_weights: bool = True,
-        commentate_name: str = "yolanda_prime_v4",
+        commentate_name: str = "yolanda_prime_v5_1",
         fingerprint_root: Path | None = None,
     ):
         if transition_matrix is None:

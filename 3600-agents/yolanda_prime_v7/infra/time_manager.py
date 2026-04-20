@@ -110,11 +110,9 @@ class TimeManager:
         elif signals.belief_peak >= 0.15:
             m *= 1.05
 
-        # v6 FIX: Panic mode REDUCES time allocation. When belief is diffuse,
-        # the bottleneck is information, not computation — deeper search cannot
-        # improve quality. Save the budget for more productive turns.
+        # Recovery spike.
         if signals.recovery_mode == "panic":
-            m *= 0.80
+            m *= 1.30
         elif signals.recovery_mode == "cautious":
             m *= 0.95
 

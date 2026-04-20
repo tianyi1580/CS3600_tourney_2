@@ -1,0 +1,181 @@
+{
+  "UNK:depth=10, eval=-10000.00, best_search_ev": {
+    "counter_bots": [],
+    "loss_count": 3,
+    "avg_loss_delta": -1.0,
+    "median_loss_delta": -1.0
+  },
+  "UNK:MEGAKNIGHT COUNTER | jumps 40 | target (": {
+    "counter_bots": [],
+    "loss_count": 1,
+    "avg_loss_delta": -14.0,
+    "median_loss_delta": -14.0
+  },
+  "UNK:Last intent: Targeting a length-2 carpet": {
+    "counter_bots": [],
+    "loss_count": 1,
+    "avg_loss_delta": -15.0,
+    "median_loss_delta": -15.0
+  },
+  "UNK:t8 The Anti-Builder: Adaptive Cashouts &": {
+    "counter_bots": [],
+    "loss_count": 4,
+    "avg_loss_delta": -10.75,
+    "median_loss_delta": -10.0
+  },
+  "UNK:Turns=40 | Searches=0 (catches=0 misses=": {
+    "counter_bots": [],
+    "loss_count": 2,
+    "avg_loss_delta": -8.0,
+    "median_loss_delta": -8.0
+  },
+  "UNK:minimax_bot turns=40 guesses=2 acc=100%": {
+    "counter_bots": [],
+    "loss_count": 6,
+    "avg_loss_delta": -2.6666666666666665,
+    "median_loss_delta": -2.5
+  },
+  "UNK:Turns: 40 | Primes: 17 | Carpets: 7 | Ra": {
+    "counter_bots": [],
+    "loss_count": 7,
+    "avg_loss_delta": -12.285714285714286,
+    "median_loss_delta": -8.0
+  },
+  "GammaTurbo_v4c": {
+    "counter_bots": [
+      {
+        "opponent": "Yolanda_Prime_v4",
+        "games": 8,
+        "elite_loss_rate": 0.625,
+        "opp_elo": 1727.5901973853527,
+        "opp_search_rate": 0.20179794520547945,
+        "opp_prime_rate": 0.41626712328767124,
+        "opp_carpet_rate": 0.13835616438356163,
+        "opp_search_conv": 0.5341535850657616,
+        "opp_avg_carpet_len": 2.535272277227723
+      },
+      {
+        "opponent": "CanWeFix",
+        "games": 5,
+        "elite_loss_rate": 0.6,
+        "opp_elo": 1501.5808736199335,
+        "opp_search_rate": 0.10416996987474235,
+        "opp_prime_rate": 0.4271444426827335,
+        "opp_carpet_rate": 0.16489614713810052,
+        "opp_search_conv": 0.5928462709284628,
+        "opp_avg_carpet_len": 2.254326923076923
+      }
+    ],
+    "loss_count": 68,
+    "avg_loss_delta": -7.294117647058823,
+    "median_loss_delta": -6.0
+  },
+  "UNK:rat_catch_points=20, prime_carpet_points": {
+    "counter_bots": [],
+    "loss_count": 6,
+    "avg_loss_delta": -7.833333333333333,
+    "median_loss_delta": -7.0
+  },
+  "UNK:Last intent: Priming current cell, advan": {
+    "counter_bots": [],
+    "loss_count": 5,
+    "avg_loss_delta": -11.0,
+    "median_loss_delta": -11.0
+  },
+  "UNK:t9 The Grandmaster: Flawless Timing & Co": {
+    "counter_bots": [],
+    "loss_count": 60,
+    "avg_loss_delta": -8.0,
+    "median_loss_delta": -8.0
+  },
+  "UNK:Turns: 40 | searches chosen: 0 | best po": {
+    "counter_bots": [],
+    "loss_count": 9,
+    "avg_loss_delta": -19.88888888888889,
+    "median_loss_delta": -19.0
+  },
+  "UNK:CPP | TT: 0/0 (0%), size=": {
+    "counter_bots": [],
+    "loss_count": 22,
+    "avg_loss_delta": -7.5,
+    "median_loss_delta": -6.0
+  },
+  "Yolanda_v6": {
+    "counter_bots": [],
+    "loss_count": 19,
+    "avg_loss_delta": -9.526315789473685,
+    "median_loss_delta": -7.0
+  },
+  "UNK:Barry played 40 turns. searches=2 (hits=": {
+    "counter_bots": [
+      {
+        "opponent": "NumericBot",
+        "games": 41,
+        "elite_loss_rate": 0.5853658536585366,
+        "opp_elo": 1610.1957710730758,
+        "opp_search_rate": 0.10426799155979229,
+        "opp_prime_rate": 0.44658525757099604,
+        "opp_carpet_rate": 0.16073707156717498,
+        "opp_search_conv": 0.5267408204760197,
+        "opp_avg_carpet_len": 2.4419913849820625
+      }
+    ],
+    "loss_count": 27,
+    "avg_loss_delta": -9.148148148148149,
+    "median_loss_delta": -8.0
+  },
+  "UNK:Last intent: Repositioning RIGHT | Last": {
+    "counter_bots": [],
+    "loss_count": 4,
+    "avg_loss_delta": -9.0,
+    "median_loss_delta": -8.0
+  },
+  "UNK:ajaxquant | turns=40, deepest_depth=7, a": {
+    "counter_bots": [
+      {
+        "opponent": "UNK:ajaxv2 | turns=40, deepest_depth=9, avg_",
+        "games": 10,
+        "elite_loss_rate": 0.6,
+        "opp_elo": 1727.7958598040827,
+        "opp_search_rate": 0.19588509316770186,
+        "opp_prime_rate": 0.4083850931677019,
+        "opp_carpet_rate": 0.15256211180124224,
+        "opp_search_conv": 0.549346016646849,
+        "opp_avg_carpet_len": 2.2814249363867685
+      }
+    ],
+    "loss_count": 36,
+    "avg_loss_delta": -11.555555555555555,
+    "median_loss_delta": -9.0
+  },
+  "UNK:FastSword ftw,  Rat Pos: 7\nERROR CODE:": {
+    "counter_bots": [
+      {
+        "opponent": "LolEz",
+        "games": 7,
+        "elite_loss_rate": 0.7142857142857143,
+        "opp_elo": 1632.8182214586698,
+        "opp_search_rate": 0.13964359666185605,
+        "opp_prime_rate": 0.45228085586998806,
+        "opp_carpet_rate": 0.15978540503231473,
+        "opp_search_conv": 0.4967423050999775,
+        "opp_avg_carpet_len": 2.442175535048105
+      }
+    ],
+    "loss_count": 15,
+    "avg_loss_delta": -7.933333333333334,
+    "median_loss_delta": -7.0
+  },
+  "Argghhhh": {
+    "counter_bots": [],
+    "loss_count": 287,
+    "avg_loss_delta": -6.630662020905923,
+    "median_loss_delta": -5.0
+  },
+  "UNK:turns=40, searches=7, avg_depth=4.95, be": {
+    "counter_bots": [],
+    "loss_count": 11,
+    "avg_loss_delta": -10.727272727272727,
+    "median_loss_delta": -11.0
+  }
+}

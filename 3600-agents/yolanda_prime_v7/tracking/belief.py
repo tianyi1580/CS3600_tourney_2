@@ -63,9 +63,8 @@ class BeliefEngine:
         if s <= 0:
             return np.full_like(vec, 1.0 / len(vec), dtype=np.float64)
         
-        # v5_1-proven: Bayesian Smoothing — add a small uniform floor (0.5%)
-        # to prevent the model from becoming 100% certain and getting stuck
-        # when wrong. This improves search accuracy by maintaining uncertainty.
+        # Bayesian Smoothing: add a small uniform floor (0.5%) to prevent
+        # the model from becoming 100% certain and getting stuck when wrong.
         vec = vec / s
         uniform_floor = 0.005 / len(vec)
         return (1.0 - 0.005) * vec + uniform_floor

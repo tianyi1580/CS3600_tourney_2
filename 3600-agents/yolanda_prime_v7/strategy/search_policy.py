@@ -92,14 +92,12 @@ def decide_search(
     turns_left: int,
     score_delta: int,
     weights: dict,
-    consecutive_misses: int = 0,
 ) -> SearchDecision:
     """Decide whether to fire a search this turn.
 
-    v6.2: Adopts v5_1's proven search discipline — hard p_max floor at 0.45,
-    denial equity nearly zeroed, minimal panic margin reduction. The layered-
-    margin approach from v6.0/v6.1 caused compounding over-suppression.
-    Additionally keeps the late-game deficit gate."""
+    `ev_best_move_non_search` is the alpha-beta root score for the best
+    non-search move; we compare search EV against it (with the denial equity
+    bonus)."""
     ev_search, cell, p_max = compute_ev_search(belief)
     threat_prob, peak_cell = estimate_opp_search_threat(
         belief,
@@ -127,33 +125,25 @@ def decide_search(
         m2 = base_nonfarm + slope_nonfarm * max(0, score_delta) / 6.0
         margin = 0.5 * (m1 + m2)
 
-    # v5_1-proven: Panic barely reduces margin (was -0.20 in v4_7, which
-    # caused speculative searches; -0.05 is conservative enough).
+    # Hysteresis / recovery logic from baseline.
     if recovery_mode == "panic":
         margin = max(0.0, margin - 0.05)
     elif recovery_mode == "cautious":
         margin += 0.2
 
-    # v6: Late-game deficit gate — when behind with few turns, only search
-    # with very strong belief (scoring moves are more reliable).
-    if turns_left < 8 and score_delta < -5:
-        margin += 0.5
-
-    # v7: Search Hysteresis — if we've missed multiple times consecutively,
-    # the belief map is likely stale or miscalibrated. Tighten margin.
-    if consecutive_misses >= 2:
-        margin += 0.15 * consecutive_misses
-
-    # Endgame: denial moot on final turn.
+    # Endgame: the denial equity dominates only if there's time for opponent
+    # to actually fire. If it's our final turn, the opp never searches after us
+    # so denial is moot.
     if turns_left <= 1:
         denial_equity = 0.0
 
-    # v5_1-proven: Nearly zero denial equity in the fire decision.
-    # Focus on our own hit probability rather than panic-searching to deny.
+    # Compose: fire iff ev_search + λ·denial_equity > ev_best_non_search + margin.
+    # We essentially ignore denial equity here (hard-clamped to 0.02) to focus
+    # on our own points rather than panic-searching to beat the opponent.
     fire = (ev_search + 0.02 * denial_equity) > (ev_best_move_non_search + margin)
 
-    # v5_1-proven: Hard p_max floor at 0.45 — don't gamble on low probability.
-    # This single gate eliminated more bad searches than any margin tuning.
+    # Sanity Gate: even if formula says fire, don't gamble on low probability.
+    # Elite bots like 'S' win by being accurate; we must match that discipline.
     if p_max < 0.45:
         fire = False
 

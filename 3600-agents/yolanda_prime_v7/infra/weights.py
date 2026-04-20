@@ -28,7 +28,6 @@ _SPECS: tuple[ParameterSpec, ...] = (
     ParameterSpec("gamma", 0.25, 0.0, 1.5, "A"),
     ParameterSpec("delta", 0.05, 0.0, 0.6, "A"),
     ParameterSpec("epsilon", 0.12, 0.0, 0.8, "A"),
-    ParameterSpec("eta", 0.15, 0.0, 1.0, "A"),
     ParameterSpec("omega_threat", 0.60, 0.0, 2.0, "A"),
     # Tier C: search-policy (rat guessing).
     ParameterSpec("lambda_denial", 0.3, 0.0, 2.0, "C"),
@@ -90,7 +89,7 @@ def vector_to_weights(vector: list[float] | tuple[float, ...], profile: str = "e
     names = parameter_names(profile)
     if len(vector) != len(names):
         raise ValueError(f"{profile} expects {len(names)} values, got {len(vector)}")
-    return clamp_weights({name: float(value) for name, value in zip(names, vector)})
+    return clamp_weights({name: float(value) for name, value in zip(names, vector, strict=True)})
 
 
 def serialize_weights(weights: Mapping[str, float], *, profile: str | None = None) -> str:

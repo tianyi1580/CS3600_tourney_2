@@ -186,18 +186,6 @@ class Orchestrator:
         # 2. Observe opponent's last move for adaptation bookkeeping.
         self._observe_opponent(board, runtime)
 
-        # v6: Update consecutive-miss counter from PREVIOUS turn's search result.
-        # board.player_search reflects our last turn's feedback (set by engine
-        # after our move was applied + perspective swap).
-        if runtime.last_action_was_search:
-            loc, res = parse_search_tuple(board.player_search)
-            if res is True:
-                runtime.consecutive_search_misses = 0
-            elif res is False:
-                runtime.consecutive_search_misses += 1
-            # Reset flag; we'll set it again if we fire this turn.
-            runtime.last_action_was_search = False
-
         # 3. Build bitboard state.
         state = BBState.from_board(board)
         zobrist = self._ensure_zobrist(belief.transition_matrix)
@@ -230,28 +218,6 @@ class Orchestrator:
         # 7. Leaf evaluator with adversarial overrides and forecast hotspots.
         adv_overrides = self._get_adversarial_overrides(runtime)
         forecast_data = self._get_forecast_data(belief)
-
-        # v6: Opening territory boost — prioritize priming over speculative
-        # searches in the first 12 turns where early-phase collapses occur.
-        phase = TimeManager.phase(board.turn_count)
-        if phase == "opening":
-            adv_overrides.setdefault(
-                "beta", float(self.weights.get("beta", 0.35)) * 1.5
-            )
-
-        # v6: Deficit-aware adaptation — when significantly behind, boost
-        # scoring and chain weights to maximize points per remaining turn.
-        score_delta = (
-            board.player_worker.get_points() - board.opponent_worker.get_points()
-        )
-        if score_delta < -8 and phase in ("mid", "late"):
-            adv_overrides.setdefault(
-                "alpha", float(self.weights.get("alpha", 1.0)) * 1.2
-            )
-            adv_overrides.setdefault(
-                "gamma", float(self.weights.get("gamma", 0.25)) * 1.2
-            )
-
         leaf_eval = build_leaf_eval(
             self.weights, 
             territory_lookup, 
@@ -319,7 +285,10 @@ class Orchestrator:
         q_best_non_search = _incremental_move_ev(state, best_move_key, zobrist)
         ab_delta = float(result.score - root_eval) if best_move_key is not None else 0.0
         
-        # phase and score_delta already computed above for leaf eval overrides
+        phase = TimeManager.phase(board.turn_count)
+        score_delta = (
+            board.player_worker.get_points() - board.opponent_worker.get_points()
+        )
         lambda_denial = float(self.weights.get("lambda_denial", 0.9))
 
         decision = decide_search(
@@ -334,7 +303,6 @@ class Orchestrator:
             turns_left=int(board.player_worker.turns_left),
             score_delta=int(score_delta),
             weights=self.weights,
-            consecutive_misses=runtime.consecutive_search_misses,
         )
 
         our_peak = float(np.max(belief.belief)) if belief.belief is not None else 0.0
@@ -353,20 +321,14 @@ class Orchestrator:
 
         if decision.fire and decision.target is not None:
             final_move = Move.search(decision.target)
-            # v6: Mark that THIS turn is a search, so next turn we check feedback.
-            runtime.last_action_was_search = True
         elif best_move_key is not None:
             final_move = key_to_move(best_move_key)
-            runtime.last_action_was_search = False
-            runtime.consecutive_search_misses = 0  # Reset on non-search
         else:
             # Absolute fallback.
             fallbacks = board.get_valid_moves(exclude_search=True)
             final_move = fallbacks[0] if fallbacks else Move.search((0, 0))
-            runtime.last_action_was_search = False
-            runtime.consecutive_search_misses = 0
 
-        # 12. Snapshot for next-turn opponent observation.
+        # 11. Snapshot for next-turn opponent observation.
         try:
             runtime.snapshot_at_our_turn_start = board.get_copy()
         except Exception:
@@ -435,9 +397,7 @@ def _incremental_move_ev(state: BBState, mv_key, keys: Optional[ZobristKeys] = N
                     if pts > best_follow:
                         best_follow = pts
             if best_follow >= 2:
-                # v5_1-proven: Major boost to carpet follow-ups. Makes the
-                # search gate properly value prime→carpet sequences over
-                # marginal searches.
+                # v5.1: Major boost to carpet follow-ups to close the gap with elite bots.
                 base += min(5.0, 0.60 * best_follow)
         except Exception:
             pass

@@ -40,10 +40,6 @@ class RuntimeState:
     last_search_confidence: float = 0.0
     last_recovery_mode: str = "neutral"
 
-    # v6: Search cooldown — track consecutive misses to prevent search spirals.
-    consecutive_search_misses: int = 0
-    last_action_was_search: bool = False
-
     # Snapshot infrastructure for opponent_observation.
     snapshot_at_our_turn_start: Any = None  # Board | None; avoid circular import.
     last_own_move: Optional[Move] = None

@@ -19,6 +19,6 @@
   "time_late_multiplier": 1,
   "time_complex_min": 0.9,
   "time_complex_max": 1.8,
-  "time_reserve": 5.0,
+  "time_reserve": 2.5,
   "time_fraction_cap": 0.15
 }
