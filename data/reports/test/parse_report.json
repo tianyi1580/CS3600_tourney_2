@@ -1,0 +1,2713 @@
+{
+  "match_root": "bytefight_cs3600_sp2026",
+  "file_count": 121264,
+  "parsed_count": 120982,
+  "fatal_count": 282,
+  "fatal_rate": 0.00232550468399525,
+  "max_fatal_rate": 0.0,
+  "warning_count": 168,
+  "fatal_issues": [
+    {
+      "path": "bytefight_cs3600_sp2026/00648eb3-77cf-4208-b7c8-d7e3758bf27c.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/00f2f131-e49e-40cf-a707-6cb6842c2aa0.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0214f364-6df9-4bb3-9806-71379ab0b4de.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/034e5647-dc11-4180-9924-fb082caee3dd.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/050cf603-2f3d-4f20-b045-6528caab7edb.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/09ea24a1-e14a-4bc2-8212-d818d736b98d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0b80f059-7a5e-43aa-bc32-87609a6c3840.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0c4cecef-2f34-4a05-ba44-57f4dd01f4af.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0d09da61-3e5c-4061-a9a9-c2b036578934.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0e89b1c2-cfe9-488a-87f1-c2af59d3cdaa.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0ea989ec-bbac-436a-8f13-e242f002106a.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1029025f-7096-4629-97f0-6e589db4e5fd.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/111f9c14-0b90-4223-ae78-cef9d5031d0a.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/11dbf7c3-68e7-4e0b-aae4-44bee8b12aad.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/12236ae0-a8f2-432f-8644-c5dd391dd913.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/12d52a57-daf7-41c9-bb26-5618e8e919d8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/12dbbd34-0a2a-463b-85cf-0d506e70eacc.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/13388d6e-33a8-4362-b918-34c0d19dc4aa.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/13e7bbca-fd40-48b4-a936-ae2cf106e699.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1407e17f-15a2-44b1-b1a0-cefc63ad1ad8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/142ff4a4-836d-47b5-8f6a-dcdb6e49e409.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/14db8351-6686-4ed7-913c-2eb635304914.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/15470a07-de89-478b-9611-0f5cda17642b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/15a09179-a417-4a2e-a6d3-b5e064c6c231.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/16df29f8-c770-4a02-a205-3c386661a3c8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1752151d-0621-4117-bb55-36405479f018.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/17a24f5d-0bd1-40c2-ae3b-c7ec40bcdcd0.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/182b2574-c153-46ea-a34d-a5b9f3fb80bd.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/18f8038c-c8dc-4aec-8fb4-32e0e5a3b3da.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1909c095-12c0-442a-aab4-219ae23eac82.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1dbd777c-a0cd-4046-a39f-750f4ab86573.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1fecda98-f634-4924-83b0-9ac5ddbf9dfa.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2091b70e-0d8c-49bd-89c1-762013b83caf.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/213fc357-3fc5-49c7-bce2-be0bff6ca896.json",
+      "severity": "fatal",
+      "field": "core_fields",
+      "message": "missing required fields: ['a_points', 'b_points', 'a_time_left', 'b_time_left']"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/21eebf81-fa28-4a99-8bc4-9699bc9acb6e.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/22a08a04-7cdc-4236-bca2-df34145b84fe.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/22ccd2f8-0577-485c-9101-3796bad82775.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/22fc2231-0eae-4441-b839-f4aeedee6678.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2336934a-6880-409f-aa77-8202708d1c9b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/23dc0ec9-e55e-4de4-ab78-1da6a3854559.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/246eff3b-fd03-408b-b22b-9be57bcab5b8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/251ae2a0-4a82-4fc6-bca3-1899018f01c8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/265fe492-7026-4962-acc6-48171e06e236.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/271573bb-ee8c-4b50-8ade-6299495cfc36.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/27c2a2a1-e044-400c-9f99-16269438b654.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/29eacff2-3ada-47db-b45d-68e23abb245a.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2b716fe1-0afd-4f48-8a76-5161235fccf2.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2bd2354d-da40-4ebb-8d67-e3f7a984cb57.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2c2afb59-2bbc-4dc8-887b-8513beb483fa.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2c5e2ad3-4fc9-4f80-a96a-0db81388fe3c.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2c706488-991e-41d4-8299-431648f70bc7.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2c8151ee-8102-4a1c-9311-2bac78aa5e27.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2da6caff-2468-4c2e-ba22-d734f120cb84.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/2e0e69e0-114e-4667-bc02-6852c7334b49.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/3196ee00-9944-4f8b-a79d-692ced92097f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/322db9cd-b1a5-4efd-8f87-82e0153933d8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/334fe9bc-135b-442d-a315-41b4bf9ca867.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/35cc521e-7dc3-4b2f-9636-1380b05c9762.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/37d28c00-1b48-4715-8b48-07ec17113d5d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/37f842e8-7b06-42cc-8d1a-e20fb842f165.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/388cfa34-af5f-4665-bc2c-64b76cfa9280.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/38ce6764-fca4-46b0-86f5-1b06018663c2.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/390a7ce4-8372-4220-933f-977931e7e168.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/39b3c9ce-94df-48ba-9aad-8e4987b36391.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/39dc4a62-51e1-4def-8c40-a35cf9317eaf.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/3abb9cfa-ddb4-4d7f-87c1-62d30765bdaf.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/3b5a854c-50a3-4e14-8227-44865c9f9dbe.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/3c2e8fad-fc16-4cf3-a5c2-a2b390420eb7.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/3fb3c5e0-7959-4813-9824-63ba3fdc1b3e.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/40c08c5c-1341-4c4a-9e6e-a4146dbe013b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/4123435e-994c-45b7-bcdb-2e75126ef374.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/429be43b-0226-4a73-820b-b23e587dc90f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/435ed6ff-7c99-40ef-b062-e2bb5b96cec6.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/4376b917-f694-475b-9a09-f0331842110b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/44219c01-0405-4ad7-a5ec-b5e36cc99530.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/450ecb92-a39c-41b7-a086-c3cde1e13299.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/45203c83-7080-4648-8606-28397970b543.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/45e02320-3b30-4782-9338-baad7e915b59.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/466ad993-f053-4ade-a32f-9aa9655fd9de.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/46a371ea-6fb7-4ff0-ae28-b10e661fac48.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/485f4b87-dbcd-4a79-a5c8-29d84db82396.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/48dfb7c8-ba10-4e24-bfb9-5f8372048cd8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/48f066c5-8ed5-427c-8faf-a92e0b9ea3e4.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/49fe72cc-ce55-434e-af75-9a344716af0e.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/4a3cbbaf-82d4-469d-bcd0-ea5fa831e41f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/4b6aa23a-c162-4a4a-9625-8b698b542ee4.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/4bd1effd-c82c-42fa-b3d7-55fe60bd7c18.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/4c40cb4a-518c-4ae8-be1c-eedae5517602.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/4cf6f3b1-83d4-4fe4-80ca-5e5497fe164d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/4dad8814-a763-4374-9a1b-70468ea41097.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/4dc817b9-710b-4598-82d8-6d08d866f3b0.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/528bf995-7e4e-4fed-a3f6-64a352559ca6.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/53c34f62-19f7-438c-91c2-0bdca44d773c.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/54573a90-67c4-4e9b-8e9e-070ee407578c.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/54e5d864-2285-43d7-ac27-52698aaaaf6b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/55ad0f8f-e7fc-4ebb-b784-04ec08fa01e9.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/56e35ba8-de18-40e6-9c73-5b3f5834d795.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/570dd2b0-9479-4ac4-8395-d5464062aac5.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/58e12741-61d4-487e-be44-731fc7049314.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/58f01810-dd28-4b9a-ab0f-9a6353458354.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5928a760-efc9-40e5-82b6-c6cf15f99da9.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/594eaa58-2aa2-431c-ba39-29521b63fef3.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5a04b2d1-2051-4cfc-af63-9b437ae9a6c5.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5a0ab3cb-90e0-403e-9c6f-baa0823aa619.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5a32194a-cf13-417d-8de4-c68aa7d83a40.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5a337777-961f-49d5-94a9-0d3fe9dad182.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5a882a10-7a95-4ca6-aef2-971e6525ff65.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5a9018c4-b1d5-4fdc-9d20-6d0d81b48497.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5bf25d3a-8fc1-4668-b159-71e478693353.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5c7d5422-8d79-4ea7-9a4e-54355c609d26.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5d097536-9e23-4378-bf6b-86ae646544aa.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5e5f30bb-f2e8-41b7-8969-32ea0a0cfac7.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5e872cad-1e35-41c8-b640-4d568e69d29d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5eafa1ef-0ab3-41e3-a294-2c92fa8d6e57.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/609e2563-003a-4fd9-b75f-55c7b02f463e.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/61531d2d-ca79-4fa9-a8ec-57c1b82df817.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6222bc0f-7761-4c70-88c6-936f717116aa.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/62a850a9-7360-4c7f-acbb-f868729d95cc.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/638dd619-f9fe-43a8-becc-4f9dddad3921.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/63aff135-768b-42bd-b2b3-a779534ab45d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/661f59a2-f19d-47ad-8a6e-e40f0a2b6432.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6724f8ee-953d-442c-8e75-39467e510727.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/672bb3e5-c341-49a3-a03b-29f260126ee8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6735cc29-e357-40c9-ab9d-9e90d45f3d15.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/67763281-ee4e-4428-bbe2-c623d32860bf.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/68a293a5-205f-4c29-bf4f-d6285952bf0d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/690f0896-8e11-46aa-ad9c-f22beda6c571.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/69dbda5a-216c-4487-980e-39dff87ce092.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6aa87291-d7ad-465d-90db-747f0bc83fe6.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6b5f59e6-14a7-4beb-87b7-4467656dc2e9.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6bcd1b2d-af6a-4c2c-8c36-3676a0ca8088.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6c95740e-afaa-4c64-96a1-ff1221a56b58.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6d5d46f2-4d5b-46b6-84ca-72e94c626866.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6d87067d-facc-4506-bad9-421a9b236b66.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6f277dc2-bb50-4218-be12-1c35d34c9a77.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/70beba5a-2b91-4815-9663-ad26fb073d85.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/710878ab-73cd-4dda-9644-a542ab9f65f6.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/711e072a-c5e2-4568-b2ca-fc0345c0d1f6.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7330d46c-0fa9-410a-9889-43f61d199b38.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7535a7f7-9dfc-49b1-952d-ffac4f3190ac.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/760cdb73-8c65-4c1d-9cda-dfabb6d9cbf0.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/78e08335-bcec-4986-bb1e-73ca987393cf.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/79a5f4e6-a050-4856-adda-104d30e12a4c.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/79f591dc-37e5-4cf1-9300-f0ee92157b40.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7a22f237-f05b-4330-ab7d-6a1fab1cc2b4.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7a352755-bc9e-4bdb-957c-1760dfde0cf1.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7b0b798e-2f23-4d4c-9230-dcde7e192ba5.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7bf4387c-bfb0-441f-b16d-37f2f2d0f0dd.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7c93bd60-2f59-4749-bd6f-f99c321b2685.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7d205d54-e33c-4822-8f21-8446829d2a2a.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7d86f728-3720-47ed-9059-86ed1de29aac.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7e6a00c1-c9ca-4ebc-991c-3a2d490dd499.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7f5a68d2-d56f-4d0b-9f05-11fc6b1f71c0.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/7fd02f61-7402-4b3b-bf06-6738d64f6d97.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8421b4d9-fc89-4c91-95da-3f28428498bc.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/84b24523-9f4e-4f83-bd2f-5ee689bf8e9b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/85c6952a-0d3d-4217-b69c-e535c9f1ba09.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/887e38f5-26c7-462d-ab6b-2ffb86c6a33b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/88ee1ee6-08e7-4179-9136-14edc1c74e7f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8a4096b6-c547-48a1-8183-ed1d83219c6f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8cd72813-4adc-42a1-b082-537f21715ebe.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8ebd7072-695d-40d2-9b4c-5b82af2e65b5.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8fd41e93-7a62-48d5-ba58-e32841b60a97.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/90325fb8-9ae7-44ee-8461-fb447508074d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/907f444a-5b36-4465-8186-de8f5157750d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/90ae8c19-a223-485d-bf3f-bb6add12fa12.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/91aab6ea-4721-4a86-bc44-60ed0c1c710d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/91b6f695-b7a5-4fce-ad9f-a6ff23fe447e.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/92410001-1289-48fc-ba31-13bc73c8782d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/93f64dd1-569e-4f74-9b8c-9a5f1a2ff337.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9469db4f-75da-4b87-a1ba-5794f39efce9.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9493368e-179a-40bf-aa0b-f777626120d2.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/95731a4c-f888-433d-925f-951178f21fd9.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9676fba7-d1e7-4e22-9be0-c0b5a7f47be9.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/97f138d3-a7ea-4203-a9d4-2288d6e54119.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/984f3ef6-248e-4d98-b5ca-4e41c63dc9d6.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/98de5758-1d37-4616-86a0-20515380a9eb.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9941876a-3f4d-4844-bfe7-d7abed415daa.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9969b9c0-da69-42ec-83ae-669da593cc72.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9a7623bc-7555-412f-9676-3a3069f222bf.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9d1554f9-0a3b-4505-95b4-ebbec77fd19d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9ead2cb7-44c7-43a6-8932-4032e809e1f7.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9f6893ca-d272-4f72-8309-7a7e5bdc6e6a.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9fc0fcaf-496a-484d-9e44-f340c3cd0d63.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a29ab510-126e-4f9c-bcb9-d65910e35c10.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a41963fa-590b-43f1-ac38-f2da06ba6e5f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a4cf2b82-12e6-49e3-8e23-dd43078576b0.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a4ddddae-2c2e-4441-99a6-67567ec74d18.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a63361ec-7589-4953-aaf4-1b8daded869a.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a7887a60-d655-487c-9d8c-a3444a189d04.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a7cf391d-087e-4af0-903c-e8c56837c3c2.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a8a9f8a6-c2fc-4e06-ae2e-b24081bd6338.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a8dfbcaf-1551-4710-b4c3-88c412b49651.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/a9396f67-d83e-45fd-bc77-f5292640d5da.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/aaeb26ef-b99d-4b98-81a3-04c8dd2c15c9.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/abe00f34-31d1-461a-83df-958b2b02dc5e.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ac87f3ad-9d35-4490-96ac-06e7ecf58683.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ad61d2b7-820b-427a-a878-7cc75cf788ea.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/af315f13-0d0b-4ee6-a50e-fe327aa96653.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b1005538-a0f5-412c-b114-fa8fa3691bd4.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b323a7d7-819b-42f9-9822-f4b6c600ee6c.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b33d3974-1faa-47c4-910f-e9fb42e91b28.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b4a9178c-469a-4ce0-b8d0-44fa00c316b8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b63fb02e-6fda-4b91-b4c4-100cf2c07eda.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b6c24de2-7d7d-463f-95bb-9dad600d3591.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b78bc75e-8f8a-4cd0-b64d-9e2e55a0bb7b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b9d6ce7e-4635-4d3b-bd7b-567638e5aca6.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ba268a4c-eae9-455d-80df-a4602bc72a9f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ba53443d-1aa5-4a1b-9ce5-199e30ce5d5b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/bd83b067-72bf-4cf6-af15-ba7fb76bb21c.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/bdca5858-d261-46e0-8125-4c36a0309bdb.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/be67223f-b217-494a-88b0-a817649c22c6.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/bf25b64d-5afa-4910-b4ed-75b9f50a1e73.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/bf56d4e1-7ba7-4a80-86e9-184f11dd19a2.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/bffabd0f-997d-4a72-ba71-49abee227cf1.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c2c92e39-0d47-4ecb-a8fc-fb096f892b68.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c3b05cea-de7c-4f6a-90b0-c2c8e779c6a4.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c4557a33-a514-4626-9b4c-e91360fc40c5.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c4b8c726-0eac-48f3-a807-4f8c8c93cd77.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c52d826b-8402-49fb-9fc0-149ada69c153.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c653ea5a-331b-469a-a4b7-0fc67e16786a.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c66ced6f-6dd7-4f78-9575-f42395da0719.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c6dc16f1-392f-47a5-bc18-8a936b7c7cdb.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c9a9e6e7-a833-4c88-884a-2fb54ef94b5f.json",
+      "severity": "fatal",
+      "field": "core_fields",
+      "message": "missing required fields: ['a_points', 'b_points', 'a_time_left', 'b_time_left']"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/caf2e4f0-b3e4-46f4-bbcd-92a7b2c0d91d.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cc0b8253-f8fa-43f1-b4cd-2748a1c560cd.json",
+      "severity": "fatal",
+      "field": "core_fields",
+      "message": "missing required fields: ['a_points', 'b_points', 'a_time_left', 'b_time_left']"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cc407f02-1d35-4386-82db-ea68446c278b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cd6aa55d-8883-4424-a1d8-d352eabb5991.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ce92fbb4-36cb-40b3-82d0-7a3532c838df.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/d1ec70ae-24cf-4ee3-b66a-f472186b3bd8.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/d3b7c4f9-512e-4cad-a0d3-4be3125a0c3f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/d46fdc6b-1343-45a1-9d42-baa5dcc53bc4.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/d6fcd281-3bd8-43ed-b082-d6e533e8af40.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/d7c19c13-8a36-4bda-ac61-0fef0e9e78c1.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/d86e9685-df33-4b16-aa23-3c538d73bf2b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/d988f91b-8a89-496a-b34f-0b31ef8c0aaa.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/db0a0c4f-0083-438b-83ad-5f491d6652e9.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/dc6e5395-7c9c-4063-a443-ba55dc8c6ff9.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/dd36560f-7f2b-4ef2-a8da-4307df05feab.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/de74b203-8a88-426a-a80d-2b6241268790.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/df0c4191-11ea-4b69-8164-d9ad23dfb276.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/df48092c-77fa-4a74-b430-74881baf412b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e038d6aa-dceb-439c-ad13-142837e33f32.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e126b99a-eafa-49a0-842c-8d0cefc12fde.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e23f0b5d-30af-4820-8953-ad56e7711d30.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e28d920f-b2cb-4fd1-8529-435fa0c4326f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e2b21615-722d-4caf-ab7c-2454b28ebeb5.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e2db3f31-f79e-4ae1-9175-ae7f694c643f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e3d8e6dd-848c-4fce-a91e-8da3d06ea6f2.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e424344a-cc3b-4eb3-a8d0-f1eda6810dfb.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e4d2036d-6568-4c79-9b4d-3af199d2db25.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e58cbdf6-1078-4bfc-b6b3-0e0ad63be01f.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e5c073fb-3264-41e1-9fd5-0c996c726c62.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e7ffe7d9-fefb-4736-a726-10940d4b94a7.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e8f6a3c6-9904-489a-940b-47409b496371.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e966d997-9ce6-43ad-b513-47ea15e7d434.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ec450075-dd30-4fb5-a1a7-6029ec44a5ee.json",
+      "severity": "fatal",
+      "field": "core_fields",
+      "message": "missing required fields: ['a_points', 'b_points', 'a_time_left', 'b_time_left']"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ee0bc0d6-85ee-4b4e-b76c-b89c2ade604b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f0a2f155-ace4-4b05-98c6-bebb13ce100e.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f0c3a732-f552-425b-9eb8-258befea4e8b.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f2e677fb-4d13-42ce-bdd0-d97c80800c62.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f38bf02b-1319-48d8-95e7-7d5994fe3f01.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f3cb750b-f6c9-4962-b26b-78cbe4ca9005.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f6289e39-9877-400d-8d1a-5ccee427bef7.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f65e4f19-ad3a-4875-84e0-1fa6a9f27075.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f66994f0-b30d-44af-a7a8-ba500fd030bc.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f68978a3-985e-4256-946a-7facf52968d3.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f8124a10-057a-4048-849b-697b5cf70492.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f8437f8e-5514-4356-b7ae-ab4e6bac392c.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f8cb89e0-f38c-4429-847d-05303bec5a83.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f91e93b5-0a87-44d0-bf59-6917c42f7855.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f9e5345a-2c73-4976-b46f-30e43e1b3791.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/f9f297ee-3632-4b42-b843-72452a862be7.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/fa91dc91-7342-420a-bbc8-9305b924642a.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/fa9dd301-c00a-4dcf-8cb9-b31684d790c1.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/fb71c498-9084-4973-949f-0e18beb563c7.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/fc0791cc-eb15-4471-b3ce-a7892d535bf7.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/fc34e5f2-dec4-4f83-b631-117fb6a37078.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/fc882907-73f1-4c8e-a963-d377fbfe0b8e.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ff7cc29e-3592-4e47-935f-5d2f82774699.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ffab0f79-74e3-481b-8bf8-d60de8d4b8ea.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/ffe18244-9e16-4b9f-a60e-d420094b9f4c.json",
+      "severity": "fatal",
+      "field": "turn_count",
+      "message": "turn_count must be positive int"
+    }
+  ],
+  "warning_issues": [
+    {
+      "path": "bytefight_cs3600_sp2026/010d2f06-d29e-4ba4-ab09-6c5a92ba703c.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=26; clamping/padding to 25"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/010d2f06-d29e-4ba4-ab09-6c5a92ba703c.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=26; clamping/padding to 25"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/010d2f06-d29e-4ba4-ab09-6c5a92ba703c.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=26; clamping/padding to 25"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/010d2f06-d29e-4ba4-ab09-6c5a92ba703c.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=26; clamping/padding to 25"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/010d2f06-d29e-4ba4-ab09-6c5a92ba703c.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=26; clamping/padding to 25"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/010d2f06-d29e-4ba4-ab09-6c5a92ba703c.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=26; clamping/padding to 25"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/010d2f06-d29e-4ba4-ab09-6c5a92ba703c.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=26; clamping/padding to 25"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/010d2f06-d29e-4ba4-ab09-6c5a92ba703c.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=26; clamping/padding to 25"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0ffca545-7c4d-484d-a26c-5a00c37f64fe.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=25; clamping/padding to 24"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0ffca545-7c4d-484d-a26c-5a00c37f64fe.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=25; clamping/padding to 24"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0ffca545-7c4d-484d-a26c-5a00c37f64fe.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=25; clamping/padding to 24"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0ffca545-7c4d-484d-a26c-5a00c37f64fe.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=25; clamping/padding to 24"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0ffca545-7c4d-484d-a26c-5a00c37f64fe.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=25; clamping/padding to 24"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0ffca545-7c4d-484d-a26c-5a00c37f64fe.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=25; clamping/padding to 24"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0ffca545-7c4d-484d-a26c-5a00c37f64fe.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=25; clamping/padding to 24"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/0ffca545-7c4d-484d-a26c-5a00c37f64fe.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=25; clamping/padding to 24"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/104807d2-cc6d-4c93-88c3-5fdf2a002992.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=32; clamping/padding to 31"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/104807d2-cc6d-4c93-88c3-5fdf2a002992.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=32; clamping/padding to 31"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/104807d2-cc6d-4c93-88c3-5fdf2a002992.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=32; clamping/padding to 31"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/104807d2-cc6d-4c93-88c3-5fdf2a002992.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=32; clamping/padding to 31"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/104807d2-cc6d-4c93-88c3-5fdf2a002992.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=32; clamping/padding to 31"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/104807d2-cc6d-4c93-88c3-5fdf2a002992.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=32; clamping/padding to 31"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/104807d2-cc6d-4c93-88c3-5fdf2a002992.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=32; clamping/padding to 31"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/104807d2-cc6d-4c93-88c3-5fdf2a002992.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=32; clamping/padding to 31"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1b532d9c-b757-49e5-82ab-35995dea1595.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=42; clamping/padding to 41"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1b532d9c-b757-49e5-82ab-35995dea1595.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=42; clamping/padding to 41"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1b532d9c-b757-49e5-82ab-35995dea1595.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=42; clamping/padding to 41"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1b532d9c-b757-49e5-82ab-35995dea1595.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=42; clamping/padding to 41"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1b532d9c-b757-49e5-82ab-35995dea1595.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=42; clamping/padding to 41"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1b532d9c-b757-49e5-82ab-35995dea1595.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=42; clamping/padding to 41"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1b532d9c-b757-49e5-82ab-35995dea1595.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=42; clamping/padding to 41"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/1b532d9c-b757-49e5-82ab-35995dea1595.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=42; clamping/padding to 41"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/26a9782d-86e0-4259-8dec-58ce04f6fff2.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=16; clamping/padding to 15"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/26a9782d-86e0-4259-8dec-58ce04f6fff2.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=16; clamping/padding to 15"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/26a9782d-86e0-4259-8dec-58ce04f6fff2.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=16; clamping/padding to 15"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/26a9782d-86e0-4259-8dec-58ce04f6fff2.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=16; clamping/padding to 15"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/26a9782d-86e0-4259-8dec-58ce04f6fff2.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=16; clamping/padding to 15"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/26a9782d-86e0-4259-8dec-58ce04f6fff2.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=16; clamping/padding to 15"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/26a9782d-86e0-4259-8dec-58ce04f6fff2.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=16; clamping/padding to 15"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/26a9782d-86e0-4259-8dec-58ce04f6fff2.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=16; clamping/padding to 15"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/38c0b9a8-93c3-43c1-b9e3-b0eea53a4e60.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=54; clamping/padding to 53"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/38c0b9a8-93c3-43c1-b9e3-b0eea53a4e60.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=54; clamping/padding to 53"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/38c0b9a8-93c3-43c1-b9e3-b0eea53a4e60.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=54; clamping/padding to 53"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/38c0b9a8-93c3-43c1-b9e3-b0eea53a4e60.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=54; clamping/padding to 53"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/38c0b9a8-93c3-43c1-b9e3-b0eea53a4e60.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=54; clamping/padding to 53"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/38c0b9a8-93c3-43c1-b9e3-b0eea53a4e60.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=54; clamping/padding to 53"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/38c0b9a8-93c3-43c1-b9e3-b0eea53a4e60.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=54; clamping/padding to 53"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/38c0b9a8-93c3-43c1-b9e3-b0eea53a4e60.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=54; clamping/padding to 53"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5382568d-8655-4537-ba0d-ffaca6304b66.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5382568d-8655-4537-ba0d-ffaca6304b66.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5382568d-8655-4537-ba0d-ffaca6304b66.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5382568d-8655-4537-ba0d-ffaca6304b66.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5382568d-8655-4537-ba0d-ffaca6304b66.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5382568d-8655-4537-ba0d-ffaca6304b66.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5382568d-8655-4537-ba0d-ffaca6304b66.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/5382568d-8655-4537-ba0d-ffaca6304b66.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6a8d4941-3f8b-4adb-8da4-5db2e99a2b82.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6a8d4941-3f8b-4adb-8da4-5db2e99a2b82.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6a8d4941-3f8b-4adb-8da4-5db2e99a2b82.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6a8d4941-3f8b-4adb-8da4-5db2e99a2b82.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6a8d4941-3f8b-4adb-8da4-5db2e99a2b82.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6a8d4941-3f8b-4adb-8da4-5db2e99a2b82.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6a8d4941-3f8b-4adb-8da4-5db2e99a2b82.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/6a8d4941-3f8b-4adb-8da4-5db2e99a2b82.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/729acdc0-b40d-48d5-ad64-6b5c1bb4791f.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/729acdc0-b40d-48d5-ad64-6b5c1bb4791f.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/729acdc0-b40d-48d5-ad64-6b5c1bb4791f.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/729acdc0-b40d-48d5-ad64-6b5c1bb4791f.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/729acdc0-b40d-48d5-ad64-6b5c1bb4791f.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/729acdc0-b40d-48d5-ad64-6b5c1bb4791f.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/729acdc0-b40d-48d5-ad64-6b5c1bb4791f.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/729acdc0-b40d-48d5-ad64-6b5c1bb4791f.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8dc10a09-ee6c-48dc-aa12-b20374ece27d.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=34; clamping/padding to 33"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8dc10a09-ee6c-48dc-aa12-b20374ece27d.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=34; clamping/padding to 33"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8dc10a09-ee6c-48dc-aa12-b20374ece27d.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=34; clamping/padding to 33"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8dc10a09-ee6c-48dc-aa12-b20374ece27d.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=34; clamping/padding to 33"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8dc10a09-ee6c-48dc-aa12-b20374ece27d.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=34; clamping/padding to 33"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8dc10a09-ee6c-48dc-aa12-b20374ece27d.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=34; clamping/padding to 33"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8dc10a09-ee6c-48dc-aa12-b20374ece27d.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=34; clamping/padding to 33"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/8dc10a09-ee6c-48dc-aa12-b20374ece27d.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=34; clamping/padding to 33"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9212a758-b62e-46be-8c43-4221128b14e0.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9212a758-b62e-46be-8c43-4221128b14e0.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9212a758-b62e-46be-8c43-4221128b14e0.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9212a758-b62e-46be-8c43-4221128b14e0.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9212a758-b62e-46be-8c43-4221128b14e0.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9212a758-b62e-46be-8c43-4221128b14e0.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9212a758-b62e-46be-8c43-4221128b14e0.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/9212a758-b62e-46be-8c43-4221128b14e0.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=4; clamping/padding to 3"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/92af2a9a-0681-4dd8-9cfc-889135d336b9.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=44; clamping/padding to 43"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/92af2a9a-0681-4dd8-9cfc-889135d336b9.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=44; clamping/padding to 43"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/92af2a9a-0681-4dd8-9cfc-889135d336b9.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=44; clamping/padding to 43"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/92af2a9a-0681-4dd8-9cfc-889135d336b9.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=44; clamping/padding to 43"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/92af2a9a-0681-4dd8-9cfc-889135d336b9.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=44; clamping/padding to 43"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/92af2a9a-0681-4dd8-9cfc-889135d336b9.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=44; clamping/padding to 43"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/92af2a9a-0681-4dd8-9cfc-889135d336b9.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=44; clamping/padding to 43"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/92af2a9a-0681-4dd8-9cfc-889135d336b9.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=44; clamping/padding to 43"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b1ebf00d-1e18-4c76-8393-46fe4e5e891a.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b1ebf00d-1e18-4c76-8393-46fe4e5e891a.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b1ebf00d-1e18-4c76-8393-46fe4e5e891a.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b1ebf00d-1e18-4c76-8393-46fe4e5e891a.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b1ebf00d-1e18-4c76-8393-46fe4e5e891a.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b1ebf00d-1e18-4c76-8393-46fe4e5e891a.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b1ebf00d-1e18-4c76-8393-46fe4e5e891a.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b1ebf00d-1e18-4c76-8393-46fe4e5e891a.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=6; clamping/padding to 5"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b2f7761b-a8a0-438c-8658-dec15b89728e.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b2f7761b-a8a0-438c-8658-dec15b89728e.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b2f7761b-a8a0-438c-8658-dec15b89728e.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b2f7761b-a8a0-438c-8658-dec15b89728e.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b2f7761b-a8a0-438c-8658-dec15b89728e.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b2f7761b-a8a0-438c-8658-dec15b89728e.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b2f7761b-a8a0-438c-8658-dec15b89728e.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b2f7761b-a8a0-438c-8658-dec15b89728e.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b3ae1577-019f-41fd-98c4-08dd2ce521e3.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=35; clamping/padding to 34"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b3ae1577-019f-41fd-98c4-08dd2ce521e3.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=35; clamping/padding to 34"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b3ae1577-019f-41fd-98c4-08dd2ce521e3.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=35; clamping/padding to 34"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b3ae1577-019f-41fd-98c4-08dd2ce521e3.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=35; clamping/padding to 34"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b3ae1577-019f-41fd-98c4-08dd2ce521e3.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=35; clamping/padding to 34"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b3ae1577-019f-41fd-98c4-08dd2ce521e3.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=35; clamping/padding to 34"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b3ae1577-019f-41fd-98c4-08dd2ce521e3.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=35; clamping/padding to 34"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b3ae1577-019f-41fd-98c4-08dd2ce521e3.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=35; clamping/padding to 34"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b6050d64-2d05-4cd1-a6af-4a5471484c92.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b6050d64-2d05-4cd1-a6af-4a5471484c92.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b6050d64-2d05-4cd1-a6af-4a5471484c92.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b6050d64-2d05-4cd1-a6af-4a5471484c92.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b6050d64-2d05-4cd1-a6af-4a5471484c92.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b6050d64-2d05-4cd1-a6af-4a5471484c92.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b6050d64-2d05-4cd1-a6af-4a5471484c92.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b6050d64-2d05-4cd1-a6af-4a5471484c92.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=28; clamping/padding to 27"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b9a24e9d-bf32-4ae8-9281-7808e6d2e6a8.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=36; clamping/padding to 35"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b9a24e9d-bf32-4ae8-9281-7808e6d2e6a8.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=36; clamping/padding to 35"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b9a24e9d-bf32-4ae8-9281-7808e6d2e6a8.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=36; clamping/padding to 35"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b9a24e9d-bf32-4ae8-9281-7808e6d2e6a8.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=36; clamping/padding to 35"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b9a24e9d-bf32-4ae8-9281-7808e6d2e6a8.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=36; clamping/padding to 35"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b9a24e9d-bf32-4ae8-9281-7808e6d2e6a8.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=36; clamping/padding to 35"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b9a24e9d-bf32-4ae8-9281-7808e6d2e6a8.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=36; clamping/padding to 35"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/b9a24e9d-bf32-4ae8-9281-7808e6d2e6a8.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=36; clamping/padding to 35"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c763d004-0197-4357-a71d-2f82e9000673.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=46; clamping/padding to 45"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c763d004-0197-4357-a71d-2f82e9000673.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=46; clamping/padding to 45"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c763d004-0197-4357-a71d-2f82e9000673.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=46; clamping/padding to 45"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c763d004-0197-4357-a71d-2f82e9000673.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=46; clamping/padding to 45"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c763d004-0197-4357-a71d-2f82e9000673.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=46; clamping/padding to 45"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c763d004-0197-4357-a71d-2f82e9000673.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=46; clamping/padding to 45"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c763d004-0197-4357-a71d-2f82e9000673.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=46; clamping/padding to 45"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/c763d004-0197-4357-a71d-2f82e9000673.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=46; clamping/padding to 45"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cd554432-e763-41fe-9147-fb6fd15eadd2.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=8; clamping/padding to 7"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cd554432-e763-41fe-9147-fb6fd15eadd2.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=8; clamping/padding to 7"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cd554432-e763-41fe-9147-fb6fd15eadd2.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=8; clamping/padding to 7"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cd554432-e763-41fe-9147-fb6fd15eadd2.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=8; clamping/padding to 7"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cd554432-e763-41fe-9147-fb6fd15eadd2.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=8; clamping/padding to 7"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cd554432-e763-41fe-9147-fb6fd15eadd2.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=8; clamping/padding to 7"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cd554432-e763-41fe-9147-fb6fd15eadd2.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=8; clamping/padding to 7"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/cd554432-e763-41fe-9147-fb6fd15eadd2.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=8; clamping/padding to 7"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e65ce3d1-1cf9-41d1-b60e-507d195a903e.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=30; clamping/padding to 29"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e65ce3d1-1cf9-41d1-b60e-507d195a903e.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=30; clamping/padding to 29"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e65ce3d1-1cf9-41d1-b60e-507d195a903e.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=30; clamping/padding to 29"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e65ce3d1-1cf9-41d1-b60e-507d195a903e.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=30; clamping/padding to 29"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e65ce3d1-1cf9-41d1-b60e-507d195a903e.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=30; clamping/padding to 29"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e65ce3d1-1cf9-41d1-b60e-507d195a903e.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=30; clamping/padding to 29"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e65ce3d1-1cf9-41d1-b60e-507d195a903e.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=30; clamping/padding to 29"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e65ce3d1-1cf9-41d1-b60e-507d195a903e.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=30; clamping/padding to 29"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e74bdf27-9de1-4a35-8f1e-595690813f71.json",
+      "severity": "warning",
+      "field": "a_points",
+      "message": "unexpected length=50; clamping/padding to 49"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e74bdf27-9de1-4a35-8f1e-595690813f71.json",
+      "severity": "warning",
+      "field": "b_points",
+      "message": "unexpected length=50; clamping/padding to 49"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e74bdf27-9de1-4a35-8f1e-595690813f71.json",
+      "severity": "warning",
+      "field": "a_time_left",
+      "message": "unexpected length=50; clamping/padding to 49"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e74bdf27-9de1-4a35-8f1e-595690813f71.json",
+      "severity": "warning",
+      "field": "b_time_left",
+      "message": "unexpected length=50; clamping/padding to 49"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e74bdf27-9de1-4a35-8f1e-595690813f71.json",
+      "severity": "warning",
+      "field": "a_turns_left",
+      "message": "unexpected length=50; clamping/padding to 49"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e74bdf27-9de1-4a35-8f1e-595690813f71.json",
+      "severity": "warning",
+      "field": "b_turns_left",
+      "message": "unexpected length=50; clamping/padding to 49"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e74bdf27-9de1-4a35-8f1e-595690813f71.json",
+      "severity": "warning",
+      "field": "rat_caught",
+      "message": "unexpected length=50; clamping/padding to 49"
+    },
+    {
+      "path": "bytefight_cs3600_sp2026/e74bdf27-9de1-4a35-8f1e-595690813f71.json",
+      "severity": "warning",
+      "field": "left_behind",
+      "message": "unexpected length=50; clamping/padding to 49"
+    }
+  ]
+}
