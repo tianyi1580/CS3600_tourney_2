@@ -51,6 +51,13 @@ DEFAULTS: dict[str, float] = {spec.name: spec.default for spec in _SPECS}
 
 PARAMETER_PROFILES: dict[str, tuple[str, ...]] = {
     "core": tuple(spec.name for spec in _SPECS if spec.tier in {"A", "B"}),
+    "search_gate_repair": (
+        "lambda_denial",
+        "search_gate_base_farm",
+        "search_gate_slope_farm",
+        "search_gate_base_nonfarm",
+        "search_gate_slope_nonfarm",
+    ),
     "phase": tuple(spec.name for spec in _SPECS if spec.tier in {"A", "B", "C"}),
     "extended": tuple(spec.name for spec in _SPECS),
 }

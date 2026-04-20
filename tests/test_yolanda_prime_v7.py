@@ -9,7 +9,7 @@ from game.enums import Cell, Direction, Noise
 from yolanda_prime_v7.agent import PlayerAgent
 from yolanda_prime_v7.infra.bitboard import BBState, generate_moves, zobrist_for_matrix, zobrist_hash
 from yolanda_prime_v7.infra.runtime_state import RuntimeState
-from yolanda_prime_v7.infra.weights import DEFAULTS
+from yolanda_prime_v7.infra.weights import DEFAULTS, parameter_names
 from yolanda_prime_v7.strategy.orchestrator import Orchestrator, _apply_root_guardrail, _incremental_move_ev
 from yolanda_prime_v7.strategy.search.alphabeta import RootCandidate, SearchResult
 from yolanda_prime_v7.strategy.search_policy import SearchDecision, decide_search
@@ -162,3 +162,13 @@ def test_v7_identity_and_env_hooks_use_yp7_not_yp4() -> None:
     assert agent.weights["alpha"] == 1.7
     assert agent.runtime_state.weights_profile == "env"
     assert agent.commentate().startswith("yolanda_prime_v7:")
+
+
+def test_search_gate_repair_profile_freezes_non_gate_weights() -> None:
+    assert parameter_names("search_gate_repair") == (
+        "lambda_denial",
+        "search_gate_base_farm",
+        "search_gate_slope_farm",
+        "search_gate_base_nonfarm",
+        "search_gate_slope_nonfarm",
+    )
