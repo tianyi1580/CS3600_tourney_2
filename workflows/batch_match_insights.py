@@ -108,6 +108,49 @@ def _outcome_from_scores(match: NormalizedMatch) -> float:
     return 0.5
 
 
+def _perspective_sign(perspective: str) -> float:
+    return -1.0 if perspective == "b" else 1.0
+
+
+def _turn_owner(turn: int) -> str | None:
+    if turn <= 0:
+        return None
+    return "a" if turn % 2 == 1 else "b"
+
+
+def _behavior_turn_rows(match: NormalizedMatch, perspective: str) -> list[dict[str, Any]]:
+    """Return behavior rows for the requested player perspective.
+
+    Match archives store one interleaved turn stream. Perspective slicing keeps
+    behavior metrics on one player's turns instead of mixing both players'
+    actions into the same rate, transition, and opening-label calculations.
+    """
+    left = match.timeline["left_behind"]
+    rat_caught = match.timeline["rat_caught"]
+    deltas = _delta_by_turn(match)
+    changes = _delta_change_by_turn(deltas)
+    limit = min(len(left), len(rat_caught), len(deltas), len(changes))
+    sign = _perspective_sign(perspective)
+    rows: list[dict[str, Any]] = []
+    for turn in range(limit):
+        owner = _turn_owner(turn)
+        if perspective in {"a", "b"} and owner != perspective:
+            continue
+        rows.append(
+            {
+                "turn": turn,
+                "owner": owner,
+                "mode": left[turn],
+                "rat_caught": bool(rat_caught[turn]),
+                "delta_after": deltas[turn],
+                "delta_change": changes[turn],
+                "perspective_delta_after": sign * deltas[turn],
+                "perspective_delta_change": sign * changes[turn],
+            }
+        )
+    return rows
+
+
 def _safe_coord(value: Any) -> list[int] | None:
     if not isinstance(value, (list, tuple)) or len(value) != 2:
         return None
@@ -414,6 +457,7 @@ def _metric_row(
     turning_point_k: int,
     top_transitions: int,
     transition_min_support: int,
+    perspective: str,
 ) -> dict[str, Any]:
     n = len(matches)
     score_outcomes = [_outcome_from_scores(m) for m in matches]
@@ -447,11 +491,12 @@ def _metric_row(
     for match in matches:
         delta = _score_delta(match)
         deltas.append(delta)
-        for i, mode in enumerate(match.timeline["left_behind"]):
+        for row in _behavior_turn_rows(match, perspective):
+            mode = str(row["mode"])
             left_behind_counts[mode] = left_behind_counts.get(mode, 0) + 1
             if mode == "search":
                 search_turns += 1
-                if i < len(match.timeline["rat_caught"]) and bool(match.timeline["rat_caught"][i]):
+                if bool(row["rat_caught"]):
                     search_catches += 1
         if min(match.timeline["a_time_left"][-1], match.timeline["b_time_left"][-1]) < 5.0:
             timeout_pressure += 1
@@ -485,15 +530,16 @@ def _metric_row(
     catastrophic_rate = (catastrophic_losses / n) if n else 0.0
 
     top_modes = sorted(left_behind_counts.items(), key=lambda kv: kv[1], reverse=True)[:3]
-    loss_driver_summary = _loss_drivers(matches)
-    phase_split = _compute_phase_split(matches)
+    loss_driver_summary = _loss_drivers(matches, perspective=perspective)
+    phase_split = _compute_phase_split(matches, perspective=perspective)
     transition_patterns = _compute_transition_patterns(
         matches,
         top_n=top_transitions,
         min_support=max(1, int(transition_min_support)),
+        perspective=perspective,
     )
     deficit_onset = _compute_deficit_onset(matches, thresholds=deficit_thresholds)
-    turning_points = _turning_points_summary(matches, k=turning_point_k)
+    turning_points = _turning_points_summary(matches, k=turning_point_k, perspective=perspective)
     recommendations: list[str] = []
     if n >= n_min and d_hi < 0:
         recommendations.append(
@@ -609,7 +655,7 @@ def _distribution(values: list[str]) -> dict[str, float]:
     return {key: val / total for key, val in sorted(counts.items())}
 
 
-def _compute_phase_split(matches: list[NormalizedMatch]) -> dict[str, Any]:
+def _compute_phase_split(matches: list[NormalizedMatch], perspective: str = "all") -> dict[str, Any]:
     bucketed: dict[str, list[NormalizedMatch]] = {
         "wins": [m for m in matches if _score_delta(m) > 0],
         "losses": [m for m in matches if _score_delta(m) < 0],
@@ -632,13 +678,17 @@ def _compute_phase_split(matches: list[NormalizedMatch]) -> dict[str, Any]:
                     continue
                 end_deltas.append(deltas[end - 1])
                 delta_changes.append(sum(changes[start:end]))
-                left = match.timeline["left_behind"][start:end]
-                rc = match.timeline["rat_caught"][start:end]
-                for i, mode in enumerate(left):
+                phase_rows_for_match = [
+                    row
+                    for row in _behavior_turn_rows(match, perspective)
+                    if start <= int(row["turn"]) < end
+                ]
+                for row in phase_rows_for_match:
+                    mode = str(row["mode"])
                     mode_counts[mode] = mode_counts.get(mode, 0) + 1
                     if mode == "search":
                         search_turns += 1
-                        if i < len(rc) and bool(rc[i]):
+                        if bool(row["rat_caught"]):
                             search_catches += 1
             phase_rows[phase] = {
                 "mean_phase_end_delta": statistics.fmean(end_deltas) if end_deltas else 0.0,
@@ -652,7 +702,13 @@ def _compute_phase_split(matches: list[NormalizedMatch]) -> dict[str, Any]:
     return out
 
 
-def _compute_transition_patterns(matches: list[NormalizedMatch], top_n: int, min_support: int = 1) -> dict[str, Any]:
+def _compute_transition_patterns(
+    matches: list[NormalizedMatch],
+    top_n: int,
+    min_support: int = 1,
+    *,
+    perspective: str = "all",
+) -> dict[str, Any]:
     buckets = {
         "wins": [m for m in matches if _score_delta(m) > 0],
         "losses": [m for m in matches if _score_delta(m) < 0],
@@ -661,7 +717,7 @@ def _compute_transition_patterns(matches: list[NormalizedMatch], top_n: int, min
     totals: dict[str, int] = {"wins": 0, "losses": 0}
     for label, bucket in buckets.items():
         for match in bucket:
-            seq = match.timeline["left_behind"]
+            seq = [str(row["mode"]) for row in _behavior_turn_rows(match, perspective)]
             for i in range(len(seq) - 1):
                 key = f"{seq[i]}->{seq[i + 1]}"
                 pair_counts[label][key] = pair_counts[label].get(key, 0) + 1
@@ -755,26 +811,25 @@ def _recovery_after_first_crossing(deltas: list[float], threshold: float) -> dic
     }
 
 
-def _behavior_vector_for_match(match: NormalizedMatch, opening_horizon: int) -> dict[str, float]:
-    left = match.timeline["left_behind"]
-    deltas = _delta_by_turn(match)
-    h = max(1, min(opening_horizon, len(left)))
-    early = left[:h]
-    mode_rates = {mode: (sum(1 for item in early if item == mode) / h) for mode in ("search", "prime", "carpet", "plain")}
-    changes = _delta_change_by_turn(deltas)
+def _behavior_vector_for_match(match: NormalizedMatch, opening_horizon: int, perspective: str) -> dict[str, float]:
+    rows = _behavior_turn_rows(match, perspective)
+    h = max(1, min(opening_horizon, len(rows)))
+    early = rows[:h]
+    changes = [str(row["mode"]) for row in early]
+    perspective_changes = [float(row["perspective_delta_change"]) for row in early]
     return {
-        "search_rate": mode_rates["search"],
-        "prime_rate": mode_rates["prime"],
-        "carpet_rate": mode_rates["carpet"],
-        "plain_rate": mode_rates["plain"],
-        "delta_slope": _safe_fmean(changes[:h]),
-        "delta_volatility": statistics.pstdev(changes[:h]) if len(changes[:h]) > 1 else 0.0,
-        "search_conversion": _avg_search_conversion([match]),
+        "search_rate": (sum(1 for item in changes if item == "search") / h),
+        "prime_rate": (sum(1 for item in changes if item == "prime") / h),
+        "carpet_rate": (sum(1 for item in changes if item == "carpet") / h),
+        "plain_rate": (sum(1 for item in changes if item == "plain") / h),
+        "delta_slope": _safe_fmean(perspective_changes),
+        "delta_volatility": statistics.pstdev(perspective_changes) if len(perspective_changes) > 1 else 0.0,
+        "search_conversion": _avg_search_conversion([match], perspective=perspective),
     }
 
 
-def _derive_opponent_archetype(match: NormalizedMatch, opening_horizon: int) -> str:
-    vec = _behavior_vector_for_match(match, opening_horizon)
+def _derive_opponent_archetype(match: NormalizedMatch, opening_horizon: int, perspective: str) -> str:
+    vec = _behavior_vector_for_match(match, opening_horizon, perspective)
     if vec["search_rate"] >= 0.35:
         return "search_heavy"
     if vec["prime_rate"] >= 0.5:
@@ -799,18 +854,20 @@ def _derive_map_seed(match: NormalizedMatch) -> str:
     return f"map:{fingerprint}"
 
 
-def _derive_opening_fields(match: NormalizedMatch, opening_horizon: int) -> tuple[str, str]:
-    left = match.timeline["left_behind"]
-    deltas = _delta_by_turn(match)
-    h = max(1, min(opening_horizon, len(left), len(deltas)))
+def _derive_opening_fields(match: NormalizedMatch, opening_horizon: int, perspective: str) -> tuple[str, str]:
+    rows = _behavior_turn_rows(match, perspective)
+    h = max(1, min(opening_horizon, len(rows)))
     tokens = []
     for i in range(h):
-        delta_bin = "up" if deltas[i] > 0 else "down" if deltas[i] < 0 else "flat"
-        tokens.append(f"{left[i]}:{delta_bin}")
+        mode = str(rows[i]["mode"])
+        delta_after = float(rows[i]["perspective_delta_after"])
+        delta_bin = "up" if delta_after > 0 else "down" if delta_after < 0 else "flat"
+        tokens.append(f"{mode}:{delta_bin}")
     signature_src = "|".join(tokens)
     opening_signature = hashlib.sha1(signature_src.encode("utf-8")).hexdigest()[:10]
-    search_first = sum(1 for item in left[:h] if item == "search")
-    prime_first = sum(1 for item in left[:h] if item == "prime")
+    opening_modes = [str(row["mode"]) for row in rows[:h]]
+    search_first = sum(1 for item in opening_modes if item == "search")
+    prime_first = sum(1 for item in opening_modes if item == "prime")
     if search_first >= max(2, h // 3):
         family = "search_first"
     elif prime_first >= max(2, h // 3):
@@ -820,11 +877,15 @@ def _derive_opening_fields(match: NormalizedMatch, opening_horizon: int) -> tupl
     return family, opening_signature
 
 
-def _with_derived_cohort_fields(matches: list[NormalizedMatch], opening_horizon: int) -> list[NormalizedMatch]:
+def _with_derived_cohort_fields(
+    matches: list[NormalizedMatch],
+    opening_horizon: int,
+    perspective: str,
+) -> list[NormalizedMatch]:
     enriched: list[NormalizedMatch] = []
     for match in matches:
-        opening_family, opening_signature = _derive_opening_fields(match, opening_horizon)
-        match.cohort["opponent_archetype"] = _derive_opponent_archetype(match, opening_horizon)
+        opening_family, opening_signature = _derive_opening_fields(match, opening_horizon, perspective)
+        match.cohort["opponent_archetype"] = _derive_opponent_archetype(match, opening_horizon, perspective)
         match.cohort["map_seed"] = _derive_map_seed(match)
         match.cohort["opening_family"] = opening_family
         match.cohort["opening_signature"] = opening_signature
@@ -902,17 +963,32 @@ def _compute_deficit_onset(matches: list[NormalizedMatch], thresholds: list[floa
     return result
 
 
-def _top_turning_points(match: NormalizedMatch, k: int) -> list[dict[str, Any]]:
+def _top_turning_points(
+    match: NormalizedMatch,
+    k: int,
+    *,
+    perspective: str = "all",
+    view: str = "all",
+) -> list[dict[str, Any]]:
     deltas = _delta_by_turn(match)
     changes = _delta_change_by_turn(deltas)
     points = []
+    perspective_sign = _perspective_sign(perspective)
     for turn in range(1, len(changes)):
+        owner = _turn_owner(turn)
+        if perspective != "all":
+            if view == "self_inflicted" and owner != perspective:
+                continue
+            if view == "opponent_swing" and owner == perspective:
+                continue
         points.append(
             {
                 "turn": turn,
+                "turn_owner": owner,
                 "delta_before": deltas[turn - 1],
                 "delta_after": deltas[turn],
                 "delta_change": changes[turn],
+                "perspective_delta_change": perspective_sign * changes[turn],
                 "left_behind_turn": match.timeline["left_behind"][turn]
                 if turn < len(match.timeline["left_behind"])
                 else "unknown",
@@ -922,57 +998,72 @@ def _top_turning_points(match: NormalizedMatch, k: int) -> list[dict[str, Any]]:
                 "phase": _phase_for_turn(turn, len(deltas)),
             }
         )
-    points.sort(key=lambda row: row["delta_change"])
+    sort_key = "delta_change" if perspective == "all" else "perspective_delta_change"
+    points.sort(key=lambda row: row[sort_key])
     return points[:k]
 
 
-def _turning_points_summary(matches: list[NormalizedMatch], k: int) -> dict[str, Any]:
-    per_file = []
-    phase_counts = {"early": 0, "mid": 0, "late": 0}
-    for match in matches:
-        top_points = _top_turning_points(match, k)
-        for row in top_points:
-            phase = row["phase"]
-            if phase in phase_counts:
-                phase_counts[phase] += 1
-        per_file.append({"match_id": match.match_id, "source_path": match.source_path, "top_turns": top_points})
-    return {"per_file": per_file, "phase_counts": phase_counts}
+def _turning_points_summary(matches: list[NormalizedMatch], k: int, perspective: str = "all") -> dict[str, Any]:
+    if perspective == "all":
+        per_file = []
+        phase_counts = {"early": 0, "mid": 0, "late": 0}
+        for match in matches:
+            top_points = _top_turning_points(match, k, perspective=perspective, view="all")
+            for row in top_points:
+                phase = row["phase"]
+                if phase in phase_counts:
+                    phase_counts[phase] += 1
+            per_file.append({"match_id": match.match_id, "source_path": match.source_path, "top_turns": top_points})
+        return {"per_file": per_file, "phase_counts": phase_counts}
+
+    summary: dict[str, Any] = {}
+    for view in ("self_inflicted", "opponent_swing"):
+        per_file = []
+        phase_counts = {"early": 0, "mid": 0, "late": 0}
+        for match in matches:
+            top_points = _top_turning_points(match, k, perspective=perspective, view=view)
+            for row in top_points:
+                phase = row["phase"]
+                if phase in phase_counts:
+                    phase_counts[phase] += 1
+            per_file.append({"match_id": match.match_id, "source_path": match.source_path, "top_turns": top_points})
+        summary[view] = {"per_file": per_file, "phase_counts": phase_counts}
+    return summary
 
 
-def _avg_mode_rate(matches: list[NormalizedMatch], mode: str) -> float:
+def _avg_mode_rate(matches: list[NormalizedMatch], mode: str, perspective: str) -> float:
     if not matches:
         return 0.0
     rates = []
     for match in matches:
-        seq = match.timeline["left_behind"]
-        rates.append(sum(1 for item in seq if item == mode) / len(seq))
+        seq = [str(row["mode"]) for row in _behavior_turn_rows(match, perspective)]
+        rates.append((sum(1 for item in seq if item == mode) / len(seq)) if seq else 0.0)
     return statistics.fmean(rates) if rates else 0.0
 
 
-def _avg_search_conversion(matches: list[NormalizedMatch]) -> float:
+def _avg_search_conversion(matches: list[NormalizedMatch], perspective: str) -> float:
     searches = catches = 0
     for match in matches:
-        left = match.timeline["left_behind"]
-        rc = match.timeline["rat_caught"]
-        for i, mode in enumerate(left):
+        for row in _behavior_turn_rows(match, perspective):
+            mode = str(row["mode"])
             if mode != "search":
                 continue
             searches += 1
-            if i < len(rc) and bool(rc[i]):
+            if bool(row["rat_caught"]):
                 catches += 1
     return (catches / searches) if searches else 0.0
 
 
-def _loss_drivers(matches: list[NormalizedMatch]) -> dict[str, Any] | None:
+def _loss_drivers(matches: list[NormalizedMatch], perspective: str) -> dict[str, Any] | None:
     losses = [m for m in matches if _score_delta(m) < 0]
     wins = [m for m in matches if _score_delta(m) > 0]
     if not losses:
         return None
 
-    loss_prime = _avg_mode_rate(losses, "prime")
-    win_prime = _avg_mode_rate(wins, "prime") if wins else 0.0
-    loss_search_conv = _avg_search_conversion(losses)
-    win_search_conv = _avg_search_conversion(wins) if wins else 0.0
+    loss_prime = _avg_mode_rate(losses, "prime", perspective)
+    win_prime = _avg_mode_rate(wins, "prime", perspective) if wins else 0.0
+    loss_search_conv = _avg_search_conversion(losses, perspective)
+    win_search_conv = _avg_search_conversion(wins, perspective) if wins else 0.0
 
     recommendations: list[str] = []
     if loss_prime - win_prime > 0.08:
@@ -1014,22 +1105,22 @@ def _bootstrap_delta_ci(loss_samples: list[float], win_samples: list[float], dra
     return lo, hi
 
 
-def _behavior_contrasts(matches: list[NormalizedMatch], n_min: int) -> dict[str, Any]:
+def _behavior_contrasts(matches: list[NormalizedMatch], n_min: int, perspective: str) -> dict[str, Any]:
     wins = [m for m in matches if _score_delta(m) > 0]
     losses = [m for m in matches if _score_delta(m) < 0]
     if not wins or not losses:
         return {"metrics": {}, "actions": []}
 
     def mode_rate(match: NormalizedMatch, mode: str) -> float:
-        seq = match.timeline["left_behind"]
+        seq = [str(row["mode"]) for row in _behavior_turn_rows(match, perspective)]
         return (sum(1 for item in seq if item == mode) / len(seq)) if seq else 0.0
 
     rows: dict[str, Any] = {}
     actions: list[str] = []
     contrasts = {
         "search_conversion_delta": (
-            [_avg_search_conversion([m]) for m in losses],
-            [_avg_search_conversion([m]) for m in wins],
+            [_avg_search_conversion([m], perspective) for m in losses],
+            [_avg_search_conversion([m], perspective) for m in wins],
         ),
         "prime_rate_delta": ([mode_rate(m, "prime") for m in losses], [mode_rate(m, "prime") for m in wins]),
         "search_rate_delta": ([mode_rate(m, "search") for m in losses], [mode_rate(m, "search") for m in wins]),
@@ -1064,12 +1155,17 @@ def build_insights(
     max_cohorts: int = 8,
     rare_min_support: int = 3,
     cohort_name: str = "all",
+    perspective: str = "all",
 ) -> dict[str, Any]:
     if deficit_thresholds is None:
         deficit_thresholds = [-5.0, -10.0, -15.0]
     if stratify_by is None:
         stratify_by = ["opponent_archetype", "map_seed", "opening_family"]
-    matches = _with_derived_cohort_fields(matches, opening_horizon=opening_horizon)
+    matches = _with_derived_cohort_fields(
+        matches,
+        opening_horizon=opening_horizon,
+        perspective=perspective,
+    )
     cohorts = []
     global_row = _metric_row(
         matches,
@@ -1079,8 +1175,9 @@ def build_insights(
         turning_point_k=turning_point_k,
         top_transitions=top_transitions,
         transition_min_support=transition_min_support,
+        perspective=perspective,
     )
-    contrasts = _behavior_contrasts(matches, n_min=n_min)
+    contrasts = _behavior_contrasts(matches, n_min=n_min, perspective=perspective)
     global_row["behavior_contrasts"] = contrasts["metrics"]
     global_row["actions"].extend(contrasts["actions"])
     global_row["cohort_type"] = "global"
@@ -1098,8 +1195,9 @@ def build_insights(
             turning_point_k=turning_point_k,
             top_transitions=top_transitions,
             transition_min_support=transition_min_support,
+            perspective=perspective,
         )
-        contrasts = _behavior_contrasts(rows, n_min=n_min)
+        contrasts = _behavior_contrasts(rows, n_min=n_min, perspective=perspective)
         row["behavior_contrasts"] = contrasts["metrics"]
         row["actions"].extend(contrasts["actions"])
         row["cohort_type"] = "segment"
@@ -1108,8 +1206,9 @@ def build_insights(
 
     global_actions = list(cohorts[0]["actions"]) if cohorts else []
     return {
-        "version": 1,
+        "version": 2,
         "match_count": len(matches),
+        "perspective": perspective,
         "n_min": n_min,
         "deficit_thresholds": deficit_thresholds,
         "turning_point_k": turning_point_k,
@@ -1131,6 +1230,7 @@ def render_markdown(insights: dict[str, Any]) -> str:
     segment_cohorts = [cohort for cohort in cohorts if cohort.get("cohort_type") == "segment"]
     display_global = global_cohorts[0] if global_cohorts else (cohorts[0] if cohorts else None)
     primary_cohort = insights["cohorts"][0]["cohort"] if insights.get("cohorts") else "selected cohort"
+    perspective = insights.get("perspective", "all")
 
     def _append_cohort_details(cohort: dict[str, Any]) -> None:
         outcome = cohort["outcome"]
@@ -1159,7 +1259,10 @@ def render_markdown(insights: dict[str, Any]) -> str:
         lines.append("#### Definitions")
         lines.append("- `Win rate`: final score outcome encoded as win=1, tie=0.5, loss=0; CI95 reflects uncertainty.")
         lines.append("- `Mean score delta`: final `a_points - b_points`; positive means ahead, negative means behind.")
-        lines.append("- `Search conversion`: rat catches divided by search turns.")
+        if perspective == "all":
+            lines.append("- `Search conversion`: rat catches divided by search turns.")
+        else:
+            lines.append("- `Search conversion`: rat catches divided by search turns for the selected perspective only.")
         lines.append("- `Timeout pressure`: fraction of matches ending with either side below 5.0 time left.")
         lines.append("- `Catastrophic loss`: fraction of matches with final score delta `<= -15`.")
         lines.append("")
@@ -1313,27 +1416,49 @@ def render_markdown(insights: dict[str, Any]) -> str:
                     f"| `{key}` | {payload.get('delta', 0.0):+.3f} | [{ci[0]:+.3f}, {ci[1]:+.3f}] | {payload.get('confidence', 'insufficient_data')} |"
                 )
             lines.append("")
-        turning_points = cohort.get("turning_points_summary", {}).get("per_file", [])
-        if turning_points:
-            lines.append("#### Diagnostics: Top Turning Points (per match)")
-            lines.append("- What the numbers mean: each item lists the largest negative single-turn `delta_change` events in that match.")
-            lines.append("- Example `t12:-6.0/carpet/early` means on turn 12 the score delta dropped by 6, action mode was `carpet`, phase was `early`.")
-            lines.append("- How to read: repeated mode/phase signatures across many matches indicate systematic tactical failure patterns to inspect in replays.")
-            for match_row in turning_points[:8]:
-                top_turns = match_row.get("top_turns", [])
-                if not top_turns:
+        turning_points_payload = cohort.get("turning_points_summary", {})
+        if "per_file" in turning_points_payload:
+            turning_points = turning_points_payload.get("per_file", [])
+            if turning_points:
+                lines.append("#### Diagnostics: Top Turning Points (per match)")
+                lines.append("- What the numbers mean: each item lists the largest negative single-turn `delta_change` events in that match.")
+                lines.append("- Example `t12:-6.0/carpet/early` means on turn 12 the score delta dropped by 6, action mode was `carpet`, phase was `early`.")
+                lines.append("- How to read: repeated mode/phase signatures across many matches indicate systematic tactical failure patterns to inspect in replays.")
+                for match_row in turning_points[:8]:
+                    top_turns = match_row.get("top_turns", [])
+                    if not top_turns:
+                        continue
+                    preview = ", ".join(
+                        f"t{tp['turn']}:{tp['delta_change']:+.1f}/{tp['left_behind_turn']}/{tp['phase']}"
+                        for tp in top_turns[:3]
+                    )
+                    lines.append(f"- `{match_row['match_id']}`: {preview}")
+        else:
+            lines.append("#### Diagnostics: Turning Points By Perspective")
+            lines.append("- `self_inflicted` isolates bad swings on the selected player's own turns.")
+            lines.append("- `opponent_swing` isolates bad swings created by the opponent's turns.")
+            lines.append("- Values below use perspective-signed delta changes, so negative means bad for the selected side.")
+            for label in ("self_inflicted", "opponent_swing"):
+                match_rows = turning_points_payload.get(label, {}).get("per_file", [])
+                if not match_rows:
                     continue
-                preview = ", ".join(
-                    f"t{tp['turn']}:{tp['delta_change']:+.1f}/{tp['left_behind_turn']}/{tp['phase']}"
-                    for tp in top_turns[:3]
-                )
-                lines.append(f"- `{match_row['match_id']}`: {preview}")
+                lines.append(f"- `{label}`")
+                for match_row in match_rows[:8]:
+                    top_turns = match_row.get("top_turns", [])
+                    if not top_turns:
+                        continue
+                    preview = ", ".join(
+                        f"t{tp['turn']}:{tp['perspective_delta_change']:+.1f}/{tp['left_behind_turn']}/{tp['phase']}"
+                        for tp in top_turns[:3]
+                    )
+                    lines.append(f"  - `{match_row['match_id']}`: {preview}")
         lines.append("")
 
     lines.append("# Batch Match Insights")
     lines.append("")
     lines.append("## Run Overview")
     lines.append(f"- Matches analyzed: **{insights['match_count']}**")
+    lines.append(f"- Perspective: **{perspective}**")
     lines.append(f"- Minimum sample threshold (`n_min`): **{insights['n_min']}**")
     lines.append(
         f"- Deficit thresholds: `{', '.join(_format_threshold_key(v) for v in insights.get('deficit_thresholds', []))}`"
@@ -1398,6 +1523,7 @@ def write_csv(insights: dict[str, Any], csv_path: Path) -> None:
         writer = csv.DictWriter(
             handle,
             fieldnames=[
+                "perspective",
                 "cohort",
                 "cohort_type",
                 "opponent_archetype",
@@ -1440,6 +1566,7 @@ def write_csv(insights: dict[str, Any], csv_path: Path) -> None:
             sc = cohort.get("behavior_contrasts", {}).get("search_conversion_delta", {})
             sc_ci = sc.get("ci95", [0.0, 0.0])
             row = {
+                "perspective": insights.get("perspective", "all"),
                 "cohort": cohort["cohort"],
                 "cohort_type": cohort.get("cohort_type", "global"),
                 "opponent_archetype": dimensions.get("opponent_archetype", ""),
@@ -1497,6 +1624,7 @@ def run_pipeline(
     opening_horizon: int = 8,
     max_cohorts: int = 8,
     rare_min_support: int = 3,
+    perspective: str = "all",
 ) -> int:
     files = collect_match_files(match_root)
     normalized: list[NormalizedMatch] = []
@@ -1523,6 +1651,7 @@ def run_pipeline(
 
     parse_report = {
         "match_root": str(match_root),
+        "perspective": perspective,
         "file_count": len(files),
         "parsed_count": len(normalized),
         "fatal_count": len(parse_errors),
@@ -1551,6 +1680,7 @@ def run_pipeline(
         max_cohorts=max_cohorts,
         rare_min_support=rare_min_support,
         cohort_name=f"folder:{match_root.name}",
+        perspective=perspective,
     )
     (output_dir / "insights_summary.json").write_text(json.dumps(insights, indent=2))
     (output_dir / "insights_report.md").write_text(render_markdown(insights))
@@ -1579,6 +1709,12 @@ def main() -> int:
         help="Directory for parse and insights artifacts.",
     )
     parser.add_argument("--n-min", type=int, default=8, help="Minimum sample size for high-confidence labeling.")
+    parser.add_argument(
+        "--perspective",
+        choices=("a", "b", "all"),
+        default="all",
+        help="Behavior metric perspective: player A, player B, or the legacy mixed stream.",
+    )
     parser.add_argument(
         "--deficit-thresholds",
         type=str,
@@ -1639,6 +1775,7 @@ def main() -> int:
         opening_horizon=args.opening_horizon,
         max_cohorts=args.max_cohorts,
         rare_min_support=args.rare_min_support,
+        perspective=args.perspective,
     )
 
 

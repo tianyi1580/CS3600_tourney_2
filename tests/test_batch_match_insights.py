@@ -295,6 +295,109 @@ class BatchMatchInsightsTests(unittest.TestCase):
         payload = _compute_transition_patterns([win, loss], top_n=5, min_support=1)
         self.assertEqual(payload["normalization"], "turn_weighted")
 
+    def test_perspective_a_b_separate_behavior_metrics(self) -> None:
+        match_a_win = self._synthetic_match(
+            "persp_a_win",
+            ["plain", "search", "prime", "search", "prime"],
+            [False, True, False, True, False],
+            [0, 4, 3, 7, 6],
+        )
+        match_a_loss = self._synthetic_match(
+            "persp_a_loss",
+            ["plain", "search", "prime", "search", "prime"],
+            [False, True, False, True, False],
+            [0, -1, -2, -3, -4],
+        )
+        a_insights = build_insights(
+            [match_a_win, match_a_loss],
+            n_min=1,
+            perspective="a",
+            transition_min_support=1,
+        )
+        a_cohort = a_insights["cohorts"][0]
+        self.assertEqual(a_insights["perspective"], "a")
+        self.assertAlmostEqual(a_cohort["behavior"]["search_conversion_rate"], 1.0)
+        self.assertEqual(a_cohort["behavior"]["left_behind_top_modes"][0][0], "search")
+        self.assertEqual(a_cohort["transition_patterns"]["top_gaps"][0]["transition"], "search->search")
+        self.assertEqual(match_a_win.cohort["opening_family"], "search_first")
+        self.assertEqual(match_a_win.cohort["opponent_archetype"], "search_heavy")
+
+        match_b_win = self._synthetic_match(
+            "persp_b_win",
+            ["plain", "search", "prime", "search", "prime"],
+            [False, True, False, True, False],
+            [0, 4, 3, 7, 6],
+        )
+        match_b_loss = self._synthetic_match(
+            "persp_b_loss",
+            ["plain", "search", "prime", "search", "prime"],
+            [False, True, False, True, False],
+            [0, -1, -2, -3, -4],
+        )
+        b_insights = build_insights(
+            [match_b_win, match_b_loss],
+            n_min=1,
+            perspective="b",
+            transition_min_support=1,
+        )
+        b_cohort = b_insights["cohorts"][0]
+        self.assertEqual(b_insights["perspective"], "b")
+        self.assertAlmostEqual(b_cohort["behavior"]["search_conversion_rate"], 0.0)
+        self.assertEqual(b_cohort["behavior"]["left_behind_top_modes"][0][0], "prime")
+        self.assertEqual(b_cohort["transition_patterns"]["top_gaps"][0]["transition"], "prime->prime")
+        self.assertEqual(match_b_win.cohort["opening_family"], "prime_chain")
+        self.assertEqual(match_b_win.cohort["opponent_archetype"], "prime_heavy")
+
+    def test_perspective_a_ignores_opponent_only_behavior_changes(self) -> None:
+        win_a = self._synthetic_match(
+            "clean_win_a",
+            ["plain", "search", "plain", "search", "plain"],
+            [False, True, False, True, False],
+            [0, 4, 4, 8, 8],
+        )
+        loss_a = self._synthetic_match(
+            "clean_loss_a",
+            ["plain", "search", "carpet", "search", "carpet"],
+            [False, True, False, True, False],
+            [0, 4, -2, 2, -8],
+        )
+        a_insights = build_insights([win_a, loss_a], n_min=1, perspective="a")
+        a_contrasts = a_insights["cohorts"][0]["behavior_contrasts"]
+        self.assertAlmostEqual(a_contrasts["search_conversion_delta"]["delta"], 0.0)
+        self.assertAlmostEqual(a_contrasts["plain_rate_delta"]["delta"], 0.0)
+        self.assertAlmostEqual(a_contrasts["carpet_rate_delta"]["delta"], 0.0)
+
+        win_all = self._synthetic_match(
+            "dirty_win_all",
+            ["plain", "search", "plain", "search", "plain"],
+            [False, True, False, True, False],
+            [0, 4, 4, 8, 8],
+        )
+        loss_all = self._synthetic_match(
+            "dirty_loss_all",
+            ["plain", "search", "carpet", "search", "carpet"],
+            [False, True, False, True, False],
+            [0, 4, -2, 2, -8],
+        )
+        all_insights = build_insights([win_all, loss_all], n_min=1, perspective="all")
+        all_contrasts = all_insights["cohorts"][0]["behavior_contrasts"]
+        self.assertGreater(all_contrasts["plain_rate_delta"]["delta"], 0.1)
+        self.assertLess(all_contrasts["carpet_rate_delta"]["delta"], -0.1)
+
+    def test_perspective_turning_points_split_self_inflicted_from_opponent_swing(self) -> None:
+        match = self._synthetic_match(
+            "turn_split",
+            ["plain", "search", "search", "carpet", "plain"],
+            [False, False, True, False, False],
+            [0, -2, -6, -7, -7],
+        )
+        insights = build_insights([match], n_min=1, perspective="a", turning_point_k=2)
+        turning = insights["cohorts"][0]["turning_points_summary"]
+        self.assertEqual(turning["self_inflicted"]["per_file"][0]["top_turns"][0]["turn"], 1)
+        self.assertEqual(turning["self_inflicted"]["per_file"][0]["top_turns"][0]["left_behind_turn"], "search")
+        self.assertEqual(turning["opponent_swing"]["per_file"][0]["top_turns"][0]["turn"], 2)
+        self.assertEqual(turning["opponent_swing"]["per_file"][0]["top_turns"][0]["left_behind_turn"], "search")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,8 +1,0 @@
-Argghhhh
-Yolanda Prime: Deep Alpha-Beta + smarter move ordering + Bayesian rat hunt
-Kronos v2
-Search depth history:
-gamma_turbo_v4cr1 max_depth=
-S:
-the game is afoot
-Excalibur ftw

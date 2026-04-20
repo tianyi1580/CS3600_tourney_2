@@ -110,7 +110,8 @@ def decide_search(
     if phase == "opening":
         base_farm = float(weights.get("search_gate_base_farm", 0.22))
         slope_farm = float(weights.get("search_gate_slope_farm", 0.22))
-        margin = base_farm + slope_farm * max(0, -score_delta) / 6.0
+        # Fix compounding margin stacking: do not increase margin during a deficit.
+        margin = base_farm + slope_farm * max(0, score_delta) / 6.0
     elif phase == "late":
         base_nonfarm = float(weights.get("search_gate_base_nonfarm", 0.35))
         slope_nonfarm = float(weights.get("search_gate_slope_nonfarm", 0.5))
@@ -121,7 +122,8 @@ def decide_search(
         slope_farm = float(weights.get("search_gate_slope_farm", 0.22))
         base_nonfarm = float(weights.get("search_gate_base_nonfarm", 0.35))
         slope_nonfarm = float(weights.get("search_gate_slope_nonfarm", 0.5))
-        m1 = base_farm + slope_farm * max(0, -score_delta) / 6.0
+        # Fix compounding margin stacking: do not penalize search when behind
+        m1 = base_farm + slope_farm * max(0, score_delta) / 6.0
         m2 = base_nonfarm + slope_nonfarm * max(0, score_delta) / 6.0
         margin = 0.5 * (m1 + m2)
 
@@ -138,12 +140,13 @@ def decide_search(
         denial_equity = 0.0
 
     # Compose: fire iff ev_search + λ·denial_equity > ev_best_non_search + margin.
-    fire = (ev_search + lambda_denial * denial_equity) > (ev_best_move_non_search + margin)
+    # We essentially ignore denial equity here (hard-clamped to 0.02) to focus
+    # on our own points rather than panic-searching to beat the opponent.
+    fire = (ev_search + 0.02 * denial_equity) > (ev_best_move_non_search + margin)
 
     # Sanity Gate: even if formula says fire, don't gamble on low probability.
-    # Elite bots like 'S' win by being accurate; we must match that discipline,
-    # but not artificially cap ourselves against defensively searching.
-    if p_max < 0.35:
+    # Elite bots like 'S' win by being accurate; we must match that discipline.
+    if p_max < 0.45:
         fire = False
 
     reason = (

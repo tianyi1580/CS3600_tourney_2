@@ -138,13 +138,11 @@ def decide_search(
         denial_equity = 0.0
 
     # Compose: fire iff ev_search + λ·denial_equity > ev_best_non_search + margin.
-    # We essentially ignore denial equity here (hard-clamped to 0.02) to focus
-    # on our own points rather than panic-searching to beat the opponent.
-    fire = (ev_search + 0.02 * denial_equity) > (ev_best_move_non_search + margin)
+    fire = (ev_search + lambda_denial * denial_equity) > (ev_best_move_non_search + margin)
 
     # Sanity Gate: even if formula says fire, don't gamble on low probability.
     # Elite bots like 'S' win by being accurate; we must match that discipline.
-    if p_max < 0.45:
+    if p_max < 0.35:
         fire = False
 
     reason = (

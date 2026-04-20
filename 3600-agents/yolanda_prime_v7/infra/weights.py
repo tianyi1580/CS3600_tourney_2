@@ -133,11 +133,11 @@ def _load_json_file(path: Path) -> dict[str, float]:
 def load_weights(
     *,
     package_root: Path | None = None,
-    env_var: str = "YP4_WEIGHTS_JSON",
+    env_var: str = "YP7_WEIGHTS_JSON",
     weights_file_name: str = "weights.json",
     allow_env: bool = True,
 ) -> tuple[dict[str, float], str]:
-    """Load safe weight overrides for yolanda_prime_v4_7 and report their source."""
+    """Load safe weight overrides for yolanda_prime_v7 and report their source."""
 
     merged = dict(DEFAULTS)
 

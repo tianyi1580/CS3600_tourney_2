@@ -51,6 +51,13 @@ class SearchResult:
     nodes: int = 0
     top2_gap: float = 0.0
     branching: int = 0
+    root_candidates: list["RootCandidate"] = field(default_factory=list)
+
+
+@dataclass(frozen=True)
+class RootCandidate:
+    move: MoveKey
+    score: float
 
 
 class TimeUp(Exception):
@@ -152,6 +159,7 @@ class Searcher:
         depth_reached = 0
         prev_score: Optional[float] = None
         top2_gap = 0.0
+        root_candidates: list[RootCandidate] = []
 
         try:
             for depth in range(1, max_depth + 1):
@@ -166,7 +174,7 @@ class Searcher:
 
                 while True:
                     try:
-                        score, mv, pv, gap = self._search_root(
+                        score, mv, pv, gap, candidates = self._search_root(
                             root_state,
                             depth,
                             alpha,
@@ -186,6 +194,7 @@ class Searcher:
                         depth_reached = depth
                         prev_score = score
                         top2_gap = gap
+                        root_candidates = candidates
                         break
 
                 # Between iterations, bail early if we're past the soft deadline.
@@ -202,6 +211,7 @@ class Searcher:
             nodes=self.nodes,
             top2_gap=top2_gap,
             branching=len(root_moves),
+            root_candidates=root_candidates,
         )
 
     def _search_root(
@@ -212,7 +222,7 @@ class Searcher:
         beta: float,
         *,
         root_moves: Optional[list[MoveKey]] = None,
-    ) -> tuple[float, Optional[MoveKey], list[MoveKey], float]:
+    ) -> tuple[float, Optional[MoveKey], list[MoveKey], float, list[RootCandidate]]:
         key = state.hash
         tt_best = None
         ent = self._tt_probe(key)
@@ -237,6 +247,7 @@ class Searcher:
         best_pv: list[MoveKey] = []
         second_best = -float(_INF)
         failed_high = False
+        candidates: list[RootCandidate] = []
 
         for idx, mv in enumerate(moves):
             child = apply_move_key(state, mv, self.zobrist)
@@ -249,6 +260,7 @@ class Searcher:
                 if alpha < score < beta:
                     score, pv = self._negamax(child, depth - 1, -beta, -alpha, ply=1)
                     score = -score
+            candidates.append(RootCandidate(move=mv, score=score))
 
             if score > best_score:
                 second_best = best_score
@@ -276,7 +288,8 @@ class Searcher:
         gap = 0.0
         if second_best > -float(_INF):
             gap = best_score - second_best
-        return best_score, best_move, best_pv, gap
+        candidates.sort(key=lambda item: item.score, reverse=True)
+        return best_score, best_move, best_pv, gap, candidates
 
     def _negamax(
         self, state: BBState, depth: int, alpha: float, beta: float, *, ply: int

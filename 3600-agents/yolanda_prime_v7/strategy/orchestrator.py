@@ -17,7 +17,7 @@ On any exception the caller's fallback (first legal non-search move) kicks in.
 """
 from __future__ import annotations
 
-from collections import defaultdict, deque
+from collections import defaultdict
 import time
 from typing import Callable, Optional, Tuple
 
@@ -29,6 +29,8 @@ from game.move import Move
 
 from ..infra.bitboard import (
     BBState,
+    MoveKey,
+    ZobristKeys,
     apply_move_key,
     generate_moves,
     key_to_move,
@@ -46,12 +48,42 @@ from ..tracking.opponent_observation import (
 from .carpet_planner import plan_best_carpet_build
 from .info_foraging import build_belief_info_fn, build_context
 from .leaf_eval import build_leaf_eval
-from .search.alphabeta import Searcher
+from .search.alphabeta import RootCandidate, SearchResult, Searcher
 from .search_policy import (
     decide_search,
     update_opp_peak_proxy,
 )
 from .territory import build_territory_lookup, compute_territory, prime_potential_array
+
+
+def _is_k1_carpet(move_key: MoveKey | None) -> bool:
+    return move_key is not None and move_key[0] == 2 and move_key[2] == 1
+
+
+def _is_non_penalizing_alternative(move_key: MoveKey) -> bool:
+    return move_key[0] in {0, 1} or (move_key[0] == 2 and move_key[2] >= 2)
+
+
+def _apply_root_guardrail(result: SearchResult) -> MoveKey | None:
+    """Downgrade dominated `CARPET(k=1)` roots unless search proved they matter."""
+    chosen = result.best_move
+    if not _is_k1_carpet(chosen):
+        return chosen
+
+    chosen_score = None
+    best_alt: RootCandidate | None = None
+    for candidate in result.root_candidates:
+        if candidate.move == chosen:
+            chosen_score = candidate.score
+            continue
+        if best_alt is None and _is_non_penalizing_alternative(candidate.move):
+            best_alt = candidate
+
+    if chosen_score is None or best_alt is None:
+        return chosen
+    if chosen_score - best_alt.score >= 1.0:
+        return chosen
+    return best_alt.move
 
 
 class Orchestrator:
@@ -117,39 +149,40 @@ class Orchestrator:
             arr[i] = int(board.get_cell((i % BOARD_SIZE, i // BOARD_SIZE)))
         return arr
 
-    def _get_adversarial_overrides(self, runtime: RuntimeState) -> dict:
-        """Analyze opponent style from buffer and return weight overrides."""
+    def _get_adversarial_overrides(self, runtime: RuntimeState) -> tuple[dict[str, float], dict[str, float]]:
+        """Analyze opponent style from buffer and return leaf/search overrides."""
         if len(runtime.opp_turn_buffer) < 4:
-            return {}
+            return {}, {}
         
         counts = defaultdict(int)
         for cat, _ in runtime.opp_turn_buffer:
             if cat is not None:
                 counts[cat] += 1
         
-        overrides = {}
+        leaf_overrides: dict[str, float] = {}
+        search_overrides: dict[str, float] = {}
         total = sum(counts.values())
         if total == 0:
-            return {}
+            return {}, {}
 
         # Sub-optimal bot detection (The George Filter):
         # If opponent does many PLAIN steps, they likely lack lookahead.
         # We should NOT waste points trying to "deny" their searches.
         if total >= 15 and counts[OpponentCategory.PLAIN] / total > 0.35:
-            overrides["lambda_denial"] = 0.05
+            search_overrides["lambda_denial"] = 0.05
             # Also be more aggressive about point scoring since they are slow.
-            overrides["alpha"] = float(self.weights.get("alpha", 1.0)) * 1.3
+            leaf_overrides["alpha"] = float(self.weights.get("alpha", 1.0)) * 1.3
 
         # Carpet-heavy opponent? Increase threat penalty and territory weight.
         elif counts[OpponentCategory.CARPET] / total > 0.15:
-            overrides["omega_threat"] = float(self.weights.get("omega_threat", 0.6)) * 1.5
-            overrides["beta"] = float(self.weights.get("beta", 0.35)) * 1.2
-        
+            leaf_overrides["omega_threat"] = float(self.weights.get("omega_threat", 0.6)) * 1.5
+            leaf_overrides["beta"] = float(self.weights.get("beta", 0.35)) * 1.2
+
         # Search-heavy opponent? Be more aggressive about scoring.
         elif counts[OpponentCategory.SEARCH] / total > 0.70:
-            overrides["alpha"] = float(self.weights.get("alpha", 1.0)) * 1.2
-            
-        return overrides
+            leaf_overrides["alpha"] = float(self.weights.get("alpha", 1.0)) * 1.2
+
+        return leaf_overrides, search_overrides
 
     def _ensure_zobrist(self, transition_matrix):
         if self._zobrist is None:
@@ -216,16 +249,15 @@ class Orchestrator:
         belief_info_fn = build_belief_info_fn(info_ctx)
 
         # 7. Leaf evaluator with adversarial overrides and forecast hotspots.
-        adv_overrides = self._get_adversarial_overrides(runtime)
+        leaf_eval_overrides, search_policy_overrides = self._get_adversarial_overrides(runtime)
         forecast_data = self._get_forecast_data(belief)
         leaf_eval = build_leaf_eval(
             self.weights, 
             territory_lookup, 
             belief_info_fn, 
-            overrides=adv_overrides,
+            overrides=leaf_eval_overrides,
             forecast_data=forecast_data
         )
-        root_eval = float(leaf_eval.evaluate(state))
 
         # 8. Time allocation.
         signals = ComplexitySignals(
@@ -278,18 +310,19 @@ class Orchestrator:
         runtime.last_root_top2_gap = result.top2_gap
         runtime.last_root_branching = result.branching
 
-        best_move_key = result.best_move
+        best_move_key = _apply_root_guardrail(result)
 
         # 10. Search-vs-move decision.
         # Fixed search gate unit logic: compare incremental point yield.
         q_best_non_search = _incremental_move_ev(state, best_move_key, zobrist)
-        ab_delta = float(result.score - root_eval) if best_move_key is not None else 0.0
         
         phase = TimeManager.phase(board.turn_count)
         score_delta = (
             board.player_worker.get_points() - board.opponent_worker.get_points()
         )
-        lambda_denial = float(self.weights.get("lambda_denial", 0.9))
+        search_policy_weights = dict(self.weights)
+        search_policy_weights.update(search_policy_overrides)
+        lambda_denial = float(search_policy_weights.get("lambda_denial", 0.9))
 
         decision = decide_search(
             belief=belief,
@@ -302,7 +335,7 @@ class Orchestrator:
             recovery_mode=runtime.last_recovery_mode,
             turns_left=int(board.player_worker.turns_left),
             score_delta=int(score_delta),
-            weights=self.weights,
+            weights=search_policy_weights,
         )
 
         our_peak = float(np.max(belief.belief)) if belief.belief is not None else 0.0
@@ -342,7 +375,7 @@ class Orchestrator:
 
         if self.enable_debug:
             print(
-                f"[yp3 turn={board.turn_count}] depth={result.depth} nodes={result.nodes} "
+                f"[yp7 turn={board.turn_count}] depth={result.depth} nodes={result.nodes} "
                 f"score={result.score:.2f} q_best={q_best_non_search:.2f} "
                 f"alloc={alloc:.3f} complex={complexity:.2f} "
                 f"move={final_move} reason={decision.reason}"
@@ -351,7 +384,11 @@ class Orchestrator:
         return final_move
 
 
-def _incremental_move_ev(state: BBState, mv_key, keys: Optional[ZobristKeys] = None) -> float:
+def _incremental_move_ev(
+    state: BBState,
+    mv_key: MoveKey | None,
+    keys: Optional[ZobristKeys] = None,
+) -> float:
     """Expected incremental points from playing `mv_key` this turn.
 
     Returns the concrete point delta the engine grants (PRIME=1, CARPET=pts),
@@ -379,7 +416,7 @@ def _incremental_move_ev(state: BBState, mv_key, keys: Optional[ZobristKeys] = N
             # from our new worker cell in the state pre-swap. Re-derive that
             # from `child` by using `child.opp` (our worker after priming) and
             # `child.primed`.
-            from ..infra.bitboard import NEIGHBOR, NUM_DIR, RAY_SEQ, CARPET_POINTS_LUT
+            from ..infra.bitboard import NUM_DIR, RAY_SEQ, CARPET_POINTS_LUT
             us_after = child.opp
             primed = child.primed
             other = 1 << child.us  # opponent
@@ -397,8 +434,8 @@ def _incremental_move_ev(state: BBState, mv_key, keys: Optional[ZobristKeys] = N
                     if pts > best_follow:
                         best_follow = pts
             if best_follow >= 2:
-                # v5.1: Major boost to carpet follow-ups to close the gap with elite bots.
-                base += min(5.0, 0.60 * best_follow)
+                # Keep speculative PRIME chains meaningfully below a certain +4 search hit.
+                base += min(1.5, 0.20 * best_follow)
         except Exception:
             pass
     return base

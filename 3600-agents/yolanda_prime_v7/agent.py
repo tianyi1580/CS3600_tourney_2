@@ -1,4 +1,4 @@
-"""Yolanda Prime v4 agent entrypoint.
+"""Yolanda Prime v7 agent entrypoint.
 
 The heavy lifting happens inside `strategy.orchestrator.Orchestrator`; this
 module is a thin shim that wires the engine-level contract to our internal
@@ -32,11 +32,11 @@ class ConfiguredPlayerAgent:
         transition_matrix=None,
         time_left: Callable | None = None,
         *,
-        weight_env_var: str = "YP4_WEIGHTS_JSON",
+        weight_env_var: str = "YP7_WEIGHTS_JSON",
         weights_root: Path | None = None,
         weights_file_name: str = "weights.json",
         allow_env_weights: bool = True,
-        commentate_name: str = "yolanda_prime_v5_1",
+        commentate_name: str = "yolanda_prime_v7",
         fingerprint_root: Path | None = None,
     ):
         if transition_matrix is None:
@@ -74,7 +74,7 @@ class ConfiguredPlayerAgent:
         self.runtime_state.build_fingerprint = compute_build_fingerprint(bot_dir=code_root)
         self.commentate_name = commentate_name
 
-        self.orchestrator = Orchestrator(weights=weights, enable_debug=_env_flag("YP4_DEBUG", False))
+        self.orchestrator = Orchestrator(weights=weights, enable_debug=_env_flag("YP7_DEBUG", False))
 
     def commentate(self) -> str:
         rs = self.runtime_state

@@ -397,8 +397,8 @@ def _incremental_move_ev(state: BBState, mv_key, keys: Optional[ZobristKeys] = N
                     if pts > best_follow:
                         best_follow = pts
             if best_follow >= 2:
-                # v5.1 / v6 tune: Reduced carpet follow-up boost to prevent search suppression.
-                base += min(1.5, 0.20 * best_follow)
+                # v5.1: Major boost to carpet follow-ups to close the gap with elite bots.
+                base += min(5.0, 0.60 * best_follow)
         except Exception:
             pass
     return base

@@ -11,7 +11,7 @@ from ..tracking.opponent_observation import OpponentCategory
 
 @dataclass
 class RuntimeState:
-    """Shared mutable policy state kept across turns for yolanda_prime_v3."""
+    """Shared mutable policy state kept across turns for yolanda_prime_v7."""
 
     constructor_budget_remaining: float = 0.0
     initial_total_budget: float = 240.0
@@ -22,7 +22,7 @@ class RuntimeState:
 
     observed_turns: int = 0
     opp_turn_buffer: deque[tuple[OpponentCategory | None, int]] = field(
-        default_factory=lambda: deque(maxlen=12)
+        default_factory=lambda: deque(maxlen=24)
     )
     opp_search_attempts: int = 0
     opp_search_correct: int = 0
